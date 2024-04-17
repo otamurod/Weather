@@ -5,8 +5,9 @@ import uz.otamurod.domain.api.model.location.LocationSearch
 import uz.otamurod.domain.api.repository.GeoCodingRemoteRepositoryApi
 import uz.otamurod.domain.interactor.LocationSearchInteractorApi
 import uz.otamurod.domain.util.DataState
+import javax.inject.Inject
 
-class LocationSearchInteractor(
+class LocationSearchInteractor @Inject constructor(
     private val geoCodingRemoteRepositoryApi: GeoCodingRemoteRepositoryApi
 ) : LocationSearchInteractorApi {
     override suspend fun searchLocation(

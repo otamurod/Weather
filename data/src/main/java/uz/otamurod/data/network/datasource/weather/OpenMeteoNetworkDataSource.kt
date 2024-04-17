@@ -4,8 +4,9 @@ import retrofit2.Response
 import uz.otamurod.data.network.api.weather.OpenMeteoApiService
 import uz.otamurod.data.network.entities.weather.ForecastResponse
 import uz.otamurod.domain.util.DataState
+import javax.inject.Inject
 
-class OpenMeteoNetworkDataSource(
+class OpenMeteoNetworkDataSource @Inject constructor(
     private val openMeteoApiService: OpenMeteoApiService
 ) {
     suspend fun getForecast(

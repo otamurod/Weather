@@ -7,8 +7,9 @@ import uz.otamurod.data.network.mapper.weather.ForecastResponseMapper
 import uz.otamurod.domain.api.model.weather.Forecast
 import uz.otamurod.domain.api.repository.OpenMeteoRemoteRepositoryApi
 import uz.otamurod.domain.util.DataState
+import javax.inject.Inject
 
-class OpenMeteoRemoteRepository(
+class OpenMeteoRemoteRepository @Inject constructor(
     private val openMeteoNetworkDataSource: OpenMeteoNetworkDataSource
 ) : OpenMeteoRemoteRepositoryApi {
     override suspend fun getForecast(

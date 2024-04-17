@@ -37,4 +37,8 @@ dependencies {
 
     // LiveData
     implementation(Dependencies.AndroidX.Lifecycle.lifecycleLiveDataKtx)
+
+    // Chuck interceptor
+    debugImplementation(Dependencies.Chuck.library)
+    releaseImplementation(Dependencies.Chuck.libraryNoOp)
 }

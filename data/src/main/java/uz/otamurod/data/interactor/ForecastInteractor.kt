@@ -5,8 +5,9 @@ import uz.otamurod.domain.api.model.weather.Forecast
 import uz.otamurod.domain.api.repository.OpenMeteoRemoteRepositoryApi
 import uz.otamurod.domain.interactor.ForecastInteractorApi
 import uz.otamurod.domain.util.DataState
+import javax.inject.Inject
 
-class ForecastInteractor(
+class ForecastInteractor @Inject constructor(
     private val openMeteoRemoteRepositoryApi: OpenMeteoRemoteRepositoryApi
 ) : ForecastInteractorApi {
     override suspend fun getForecast(
