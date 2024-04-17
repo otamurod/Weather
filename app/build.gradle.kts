@@ -15,6 +15,18 @@ android {
     defaultConfig {
         applicationId = Config.applicationId
         namespace = Config.packageNameApp
+
+        /**
+         * Data-level
+         */
+        buildConfigField("String", "OPEN_METEO_API_BASE_URL", Config.API.OPEN_METEO_API_BASE_URL)
+        buildConfigField("String", "GEO_CODING_API_BASE_URL", Config.API.GEO_CODING_API_BASE_URL)
+        buildConfigField("String", "SHARED_PREF_NAME", Config.SharedPreferences.SHARED_PREF_NAME)
+
+        /**
+         * Presentation-level
+         */
+        buildConfigField("String", "BUILD_VERSION", "\"${Config.Build.versionName}\"")
     }
 
     buildTypes {
