@@ -14,7 +14,7 @@ interface GeoCodingApiService {
     suspend fun searchLocation(
         @Query("name") name: String,
         @Query("count") count: Int = 10,
-        @Query("language") language: String = "en",
+        @Query("language") language: String,
         @Query("format") format: String = "json"
     ): Response<DataState<LocationSearchResponse>>
 

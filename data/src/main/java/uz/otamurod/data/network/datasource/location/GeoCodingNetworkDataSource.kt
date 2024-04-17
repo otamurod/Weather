@@ -10,7 +10,7 @@ class GeoCodingNetworkDataSource(
 ) {
     suspend fun searchLocation(
         name: String,
-        language: String = "en"
+        language: String
     ): Response<DataState<LocationSearchResponse>> {
         return geoCodingApiService.searchLocation(name = name, language = language)
     }
