@@ -115,4 +115,9 @@ object Dependencies {
         const val hiltAndroidGradlePlugin =
             "com.google.dagger:hilt-android-gradle-plugin:$daggerHiltVersion"
     }
+
+    object OpenStreetMap {
+        private const val openStreetMapVersion = "6.1.18"
+        const val openStreetMap = "org.osmdroid:osmdroid-android:$openStreetMapVersion"
+    }
 }

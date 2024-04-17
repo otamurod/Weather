@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 import buildsrc.Config
 import buildsrc.Dependencies
 
