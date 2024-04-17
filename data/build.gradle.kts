@@ -15,6 +15,12 @@ android {
 }
 
 dependencies {
+    // Inject Specifications Layer
+    implementation(project(":specs"))
+
+    // Inject Domain Layer
+    implementation(project(":domain"))
+
     // Kotlin Coroutines
     implementation(Dependencies.Coroutines.coroutinesCore)
     implementation(Dependencies.Coroutines.coroutinesAndroid)

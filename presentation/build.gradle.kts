@@ -23,6 +23,9 @@ android {
 
 dependencies {
 
+    // Inject Specifications Layer
+    implementation(project(":specs"))
+
     // Inject Domain Layer
     implementation(project(":domain"))
 
