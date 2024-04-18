@@ -9,4 +9,8 @@ interface ForecastInteractorApi {
         latitude: Double,
         longitude: Double
     ): Flow<DataState<Forecast>>
+
+    suspend fun getForecastOfPlaceByLatLong(latitude: Double, longitude: Double): Forecast?
+
+    suspend fun insertForecastOfPlace(forecast: Forecast)
 }

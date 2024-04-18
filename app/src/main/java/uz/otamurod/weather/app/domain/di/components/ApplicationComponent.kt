@@ -2,6 +2,7 @@ package uz.otamurod.weather.app.domain.di.components
 
 import dagger.BindsInstance
 import dagger.Component
+import uz.otamurod.data.di.modules.DatabaseModule
 import uz.otamurod.data.di.modules.InteractorModule
 import uz.otamurod.data.di.modules.NetworkModule
 import uz.otamurod.data.di.modules.RepositoryModule
@@ -16,7 +17,8 @@ import javax.inject.Singleton
         BuildModule::class,
         NetworkModule::class,
         RepositoryModule::class,
-        InteractorModule::class
+        InteractorModule::class,
+        DatabaseModule::class
     ]
 )
 interface ApplicationComponent {

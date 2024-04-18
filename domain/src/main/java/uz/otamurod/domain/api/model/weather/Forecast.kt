@@ -7,7 +7,7 @@ data class Forecast(
 
     val longitude: Double,
 
-    val generationtimeMs: Double,
+    val generationTimeMs: Double,
 
     val utcOffsetSeconds: Int,
 

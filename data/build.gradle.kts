@@ -25,6 +25,11 @@ dependencies {
     implementation(Dependencies.Coroutines.coroutinesCore)
     implementation(Dependencies.Coroutines.coroutinesAndroid)
 
+    // Room, Kotlin Extensions and Coroutines support for Room
+    implementation(Dependencies.Room.runtime)
+    ksp(Dependencies.Room.compiler)
+    implementation(Dependencies.Room.roomKtx)
+
     // Retrofit
     implementation(Dependencies.Retrofit2.retrofit)
     implementation(Dependencies.Retrofit2.converterGson)

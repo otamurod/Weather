@@ -9,7 +9,7 @@ object ForecastResponseMapper {
             ForecastBo(
                 latitude = latitude,
                 longitude = longitude,
-                generationtimeMs = generationtimeMs,
+                generationTimeMs = generationtimeMs,
                 utcOffsetSeconds = utcOffsetSeconds,
                 timezone = timezone,
                 timezoneAbbreviation = timezoneAbbreviation,
