@@ -15,9 +15,20 @@ android {
 }
 
 dependencies {
+    // Inject Specifications Layer
+    implementation(project(":specs"))
+
+    // Inject Domain Layer
+    implementation(project(":domain"))
+
     // Kotlin Coroutines
     implementation(Dependencies.Coroutines.coroutinesCore)
     implementation(Dependencies.Coroutines.coroutinesAndroid)
+
+    // Room, Kotlin Extensions and Coroutines support for Room
+    implementation(Dependencies.Room.runtime)
+    ksp(Dependencies.Room.compiler)
+    implementation(Dependencies.Room.roomKtx)
 
     // Retrofit
     implementation(Dependencies.Retrofit2.retrofit)
@@ -31,4 +42,8 @@ dependencies {
 
     // LiveData
     implementation(Dependencies.AndroidX.Lifecycle.lifecycleLiveDataKtx)
+
+    // Chuck interceptor
+    debugImplementation(Dependencies.Chuck.library)
+    releaseImplementation(Dependencies.Chuck.libraryNoOp)
 }

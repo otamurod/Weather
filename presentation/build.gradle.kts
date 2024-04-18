@@ -23,6 +23,9 @@ android {
 
 dependencies {
 
+    // Inject Specifications Layer
+    implementation(project(":specs"))
+
     // Inject Domain Layer
     implementation(project(":domain"))
 
@@ -78,4 +81,7 @@ dependencies {
 
     // Map
     implementation(Dependencies.OpenStreetMap.openStreetMap)
+
+    // Location Services
+    implementation(Dependencies.GoogleServices.playServicesLocation)
 }

@@ -55,6 +55,17 @@ android {
 }
 
 dependencies {
+    // Inject Specifications Layer
+    implementation(project(":specs"))
+
+    // Inject Domain Layer
+    implementation(project(":domain"))
+
+    // Inject Data Layer
+    implementation(project(":data"))
+
+    // Inject Presentation Layer
+    implementation(project(":presentation"))
 
     // AndroidX
     implementation(Dependencies.AndroidX.coreKtx)
