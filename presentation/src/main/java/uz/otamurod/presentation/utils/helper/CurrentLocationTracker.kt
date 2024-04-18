@@ -17,9 +17,9 @@ import java.util.*
 import javax.inject.Inject
 import kotlin.coroutines.resume
 
-object CurrentLocationTracker {
+class CurrentLocationTracker {
     @Inject
-    private lateinit var application: Application
+    lateinit var application: Application
 
     private val locationClient: FusedLocationProviderClient =
         LocationServices.getFusedLocationProviderClient(application.applicationContext)
