@@ -120,4 +120,22 @@ object Dependencies {
         private const val openStreetMapVersion = "6.1.18"
         const val openStreetMap = "org.osmdroid:osmdroid-android:$openStreetMapVersion"
     }
+
+    object GoogleServices {
+        private const val googleServicesVersion = "4.3.15"
+        private const val playServicesLocationVersion = "21.0.1"
+        private const val playServicesMapsVersion = "18.2.0"
+        private const val placesVersion = "3.3.0"
+        private const val mapsServicesVersion = "0.15.0"
+        private const val mapsUtilsVersion = "2.2.0"
+
+        const val googleServices = "com.google.gms:google-services:$googleServicesVersion"
+        const val playServicesLocation =
+            "com.google.android.gms:play-services-location:$playServicesLocationVersion"
+        const val playServicesMaps =
+            "com.google.android.gms:play-services-maps:$playServicesMapsVersion"
+        const val places = "com.google.android.libraries.places:places:$placesVersion"
+        const val mapsServices = "com.google.maps:google-maps-services:$mapsServicesVersion"
+        const val mapsUtils = "com.google.maps.android:android-maps-utils:$mapsUtilsVersion"
+    }
 }

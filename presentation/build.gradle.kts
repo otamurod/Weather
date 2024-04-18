@@ -81,4 +81,7 @@ dependencies {
 
     // Map
     implementation(Dependencies.OpenStreetMap.openStreetMap)
+
+    // Location Services
+    implementation(Dependencies.GoogleServices.playServicesLocation)
 }
