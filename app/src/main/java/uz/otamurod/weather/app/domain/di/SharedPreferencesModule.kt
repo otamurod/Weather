@@ -1,4 +1,4 @@
-package uz.otamurod.data.di.modules
+package uz.otamurod.weather.app.domain.di
 
 import android.content.Context
 import dagger.Module
@@ -20,10 +20,11 @@ object SharedPreferencesModule {
 
     @Singleton
     @Provides
-    fun provideWeatherApplicationPreferences(
+    fun provideWeatherApplicationPreferencesApi(
         @ApplicationContext context: Context,
         weatherBuildConfigApi: WeatherBuildConfigApi
     ): WeatherApplicationPreferencesApi {
         return WeatherApplicationPreferences(context, weatherBuildConfigApi.sharedPreferencesName)
     }
+
 }

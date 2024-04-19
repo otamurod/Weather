@@ -73,6 +73,11 @@ dependencies {
     implementation(Dependencies.AndroidX.material)
     implementation(Dependencies.AndroidX.constraintLayout)
 
+    // Room, Kotlin Extensions and Coroutines support for Room
+    implementation(Dependencies.Room.runtime)
+    ksp(Dependencies.Room.compiler)
+    implementation(Dependencies.Room.roomKtx)
+
     // Retrofit2
     implementation(Dependencies.Retrofit2.retrofit)
     implementation(Dependencies.Retrofit2.converterGson)
@@ -80,6 +85,7 @@ dependencies {
     // Dagger - Hilt
     implementation(Dependencies.Hilt.hiltAndroid)
     ksp(Dependencies.Hilt.hiltAndroidCompiler)
+    ksp(Dependencies.Hilt.hiltCompiler)
     implementation(Dependencies.Hilt.hiltNavigation)
 
     // Chuck interceptor

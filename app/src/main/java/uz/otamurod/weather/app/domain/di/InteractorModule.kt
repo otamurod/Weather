@@ -1,4 +1,4 @@
-package uz.otamurod.data.di.modules
+package uz.otamurod.weather.app.domain.di
 
 import dagger.Module
 import dagger.Provides
@@ -21,19 +21,19 @@ object InteractorModule {
 
     @Provides
     @Singleton
-    fun provideForecastInteractor(forecastInteractor: ForecastInteractor): ForecastInteractorApi {
+    fun provideForecastInteractorApi(forecastInteractor: ForecastInteractor): ForecastInteractorApi {
         return forecastInteractor
     }
 
     @Provides
     @Singleton
-    fun provideLocationSearchInteractor(locationSearchInteractor: LocationSearchInteractor): LocationSearchInteractorApi {
+    fun provideLocationSearchInteractorApi(locationSearchInteractor: LocationSearchInteractor): LocationSearchInteractorApi {
         return locationSearchInteractor
     }
 
     @Provides
     @Singleton
-    fun provideLastLocationInteractor(lastLocationInteractor: LastLocationInteractor): LastLocationInteractorApi {
+    fun provideLastLocationInteractorApi(lastLocationInteractor: LastLocationInteractor): LastLocationInteractorApi {
         return lastLocationInteractor
     }
 }

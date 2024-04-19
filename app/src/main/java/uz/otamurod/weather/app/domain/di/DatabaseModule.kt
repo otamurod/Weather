@@ -1,4 +1,4 @@
-package uz.otamurod.data.di.modules
+package uz.otamurod.weather.app.domain.di
 
 import android.content.Context
 import dagger.Module

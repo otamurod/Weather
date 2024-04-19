@@ -5,4 +5,4 @@ data class LastLocation(
     val latitude: Double,
     val longitude: Double,
     val addressName: String
-)
+):java.io.Serializable
