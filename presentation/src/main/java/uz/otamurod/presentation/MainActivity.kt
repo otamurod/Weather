@@ -3,10 +3,12 @@ package uz.otamurod.presentation
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
-import androidx.appcompat.app.AppCompatActivity
+import com.akexorcist.localizationactivity.ui.LocalizationActivity
+import dagger.hilt.android.AndroidEntryPoint
 import uz.otamurod.presentation.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+@AndroidEntryPoint
+class MainActivity : LocalizationActivity() {
     private lateinit var binding: ActivityMainBinding
 
     @Suppress("DEPRECATION")
