@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--    Welcome Fragment    -->
+    <style name="Widget.WelcomeToApp.TextView.TextAppearance" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:fontFamily">@font/sf_pro_display</item>
+        <item name="android:lineSpacingExtra">10dp</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textColor">@color/welcome_to_app_color</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Widget.WelcomeGuide.TextView.TextAppearance" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="android:fontFamily">@font/sf_pro_display</item>
+        <item name="android:lineSpacingExtra">6dp</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textColor">@color/welcome_guide_color</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Widget.WelcomeBodyMedium.TextView.TextAppearance" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:fontFamily">@font/sf_pro_display</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textColor">@color/welcome_stay_informed_color</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Widget.WelcomeUserPrompt.TextView.TextAppearance" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:fontFamily">@font/sf_pro_display</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textColor">@color/welcome_user_prompt_color</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:lineSpacingExtra">12dp</item>
+        <item name="android:paddingStart">6dp</item>
+    </style>
+
+    <style name="Widget.WelcomeUserPrompt.Button.TextAppearance" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:fontFamily">@font/sf_pro_display</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textColor">@color/welcome_user_prompt_color</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">24sp</item>
+        <item name="android:paddingEnd">24sp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:elevation">5dp</item>
+    </style>
+
+</resources>

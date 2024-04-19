@@ -30,5 +30,13 @@
     <string name="thunderstorm">Thunderstorm</string>
     <string name="slight_thunderstorm_hail">Slight thunderstorm hail</string>
     <string name="heavy_thunderstorm_hail">Heavy thunderstorm hail</string>
+    <string name="welcome_to_app">Welcome to the Weather app!</string>
+    <string name="guide_user">Prepare to be amazed by our weather app\'s precision.</string>
+    <string name="version_name">Version 1.0.0</string>
+    <string name="turn_on_network_prompt"><![CDATA[Turn on the Internet &\nSwipe down the screen to retry!]]></string>
+    <string name="enable_gps_prompt"><![CDATA[Enable GPS, please &\nSwipe down the screen to continue!]]></string>
+    <string name="grant_location_permission_prompt"><![CDATA[Grant Location Permission &\nEnable Gps, Please!]]></string>
+    <string name="grant_location_permission">Grant Permission</string>
+    <string name="stay_informed"><![CDATA[Stay informed & prepared with accurate forecasts at your fingertips.]]></string>
 
 </resources>
