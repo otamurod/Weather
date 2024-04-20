@@ -2,7 +2,6 @@ package uz.otamurod.presentation.ui.welcome
 
 import android.Manifest
 import android.content.Context
-import android.os.Build
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -42,11 +41,10 @@ class WelcomeViewModel @Inject constructor(
 
     fun requestLocationPermission() = viewModelScope.launch {
         permissionRequester.request(
-            Manifest.permission.ACCESS_FINE_LOCATION,
-            Manifest.permission.ACCESS_COARSE_LOCATION
+            Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION
         ).collect {
             permissionStateLiveData.setValue(
-                it is PermissionResult.Granted || Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q
+                it is PermissionResult.Granted
             )
 
             refreshLastLocation()
@@ -165,10 +163,7 @@ class WelcomeViewModel @Inject constructor(
             val addressName =
                 currentLocationTracker.getAddressName(location.latitude, location.longitude)
 
-            if (lastLocation.value != null &&
-                isLastLocationAccessed.value != null &&
-                isLastLocationAccessed.value == true
-            ) {
+            if (lastLocation.value != null && isLastLocationAccessed.value != null && isLastLocationAccessed.value == true) {
                 viewModelScope.launch(Dispatchers.IO) {
                     val updatedLastLocation = lastLocation.value?.copy(
                         latitude = location.latitude,
