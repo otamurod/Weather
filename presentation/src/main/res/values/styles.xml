@@ -59,4 +59,72 @@
         <item name="android:elevation">5dp</item>
     </style>
 
+    <!--    Current Weather Fragment    -->
+    <style name="Widget.HourlyWeatherRvItem.TextView.TextAppearance" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:fontFamily">@font/sf_pro_display</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/hourly_weather_rv_item_text_color</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+    </style>
+
+    <style name="Widget.NextSevenDays.TextView.TextAppearance" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:fontFamily">@font/sf_pro_display</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/next_seven_days_text_color</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:drawablePadding">16dp</item>
+    </style>
+
+    <style name="Widget.Today.TextView.TextAppearance" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:fontFamily">@font/sf_pro_display</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/today_text_color</item>
+        <item name="android:layout_marginTop">16dp</item>
+    </style>
+
+    <style name="Widget.CurrentWeatherProbabilities.TextView.TextAppearance" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:fontFamily">@font/sf_pro_display</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/today_text_color</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
+    <style name="Widget.CurrentWeatherCode.TextView.TextAppearance" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:fontFamily">@font/sf_pro_display</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/current_weather_code_text_color</item>
+        <item name="android:layout_marginTop">24dp</item>
+    </style>
+
+    <style name="Widget.IsDay.TextView.TextAppearance" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:fontFamily">@font/sf_pro_display</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/current_is_day_text_color</item>
+    </style>
+
+    <style name="Widget.CurrentTemperature.TextView.TextAppearance" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:fontFamily">@font/sf_pro_display</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/current_temperature_text_color</item>
+    </style>
+
+    <style name="Widget.CurrentApparentTemperature.TextView.TextAppearance" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:fontFamily">@font/sf_pro_display</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/current_apparent_temperature_text_color</item>
+    </style>
+
 </resources>

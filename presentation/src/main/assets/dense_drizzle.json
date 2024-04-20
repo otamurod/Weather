@@ -1,1 +1,2129 @@
-{"nm":"Comp 1","ddd":0,"h":200,"w":200,"meta":{"g":"@lottiefiles/toolkit-js 0.33.2"},"layers":[{"ty":2,"nm":"cloudDark.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[128,128,0],"ix":1},"s":{"a":0,"k":[70.312,70.312,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[100,56,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_0","ind":1},{"ty":0,"nm":"Drops1Row","sr":1,"st":0,"op":40,"ip":0,"hd":false,"ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[100,100,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[100,100,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":1,"k":[{"o":{"x":0.167,"y":0.167},"i":{"x":0.833,"y":0.833},"s":[40],"t":0},{"o":{"x":0.167,"y":0.167},"i":{"x":0.833,"y":0.833},"s":[100],"t":5},{"s":[40],"t":15}],"ix":11}},"ef":[],"w":200,"h":200,"refId":"comp_0","ind":2},{"ty":0,"nm":"Drops2Row","sr":1,"st":0,"op":40,"ip":0,"hd":false,"ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[100,100,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[100,100,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":1,"k":[{"o":{"x":0.167,"y":0.167},"i":{"x":0.833,"y":0.833},"s":[40],"t":0},{"o":{"x":0.167,"y":0.167},"i":{"x":0.833,"y":0.833},"s":[100],"t":25},{"s":[40],"t":35}],"ix":11}},"ef":[],"w":200,"h":200,"refId":"comp_1","ind":3},{"ty":0,"nm":"Drops3Row","sr":1,"st":0,"op":40,"ip":0,"hd":false,"ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[100,100,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[100,100,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":1,"k":[{"o":{"x":0.167,"y":0.167},"i":{"x":0.833,"y":0.833},"s":[40],"t":4},{"s":[100],"t":41}],"ix":11}},"ef":[],"w":200,"h":200,"refId":"comp_2","ind":4}],"v":"5.3.4","fr":20,"op":40,"ip":0,"assets":[{"id":"image_0","u":"","e":1,"w":256,"h":256,"p":"data:image/png;base64,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"},{"id":"image_1","u":"","e":1,"w":16,"h":16,"p":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABpklEQVQ4T43STSh0URgH8Od5zrlz3TuSGotRb6IszAwLL2GGXs1GlsxIURZsbO0sydLS6t3RIIYsLUSauDP5GLGVFEVTbH3l5j4iNHfmXs1Znud/fv3vPQfhlxVZPxtFFGp6oOm/WwzdBpHk0T+S+iYgeYgwutcXyDhlHYG2tcM6hby7SFT7dSiHDC378WCuECkC6ucuVL//cRekJ2IPc/r5/jl6Mt5q5u8XAV3J02lQ1Cnnuji1HwvMuAIdq9m/UpbtAZHX5d+8WPjWmOlvuvye2xpE1k7TJNWC6gUU8pbRH+otAsJL2WGhacuArhfzIxFh5/et/KTDKydJoWqDTtV1haBaVyD3ZMKTaQEwzBrx4ORHNg/I5oSq+0sCAM6NWLDBBnQsHjxKb4X+28vMm90aseAfO5DIXMvyyppSAGbeSMdDA/ZPWDpIoFBGSNVKMHjMiIXmbQAwU3sicyf1Ch8K4Y4g7Bh9gR5AZDsAAOGV42br9XVbeMp8Tk3Ysq4U04ymhpqvHB/S5yYzhZcPF9iyugGpiqQUDHgDwCnVr02koqGH/HrvFbmBEX+1/bUAAAAASUVORK5CYII="},{"nm":"","id":"comp_0","layers":[{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[31.5,124,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":1},{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[169.5,124.5,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":2},{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[152.5,120,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":3},{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[84.5,118,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":4},{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[67,122.5,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":5},{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[119.5,119,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":6},{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[137,124,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":7},{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[101.5,122.5,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":8},{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[49.5,118.5,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":9}]},{"nm":"","id":"comp_1","layers":[{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[84,146,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":1},{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[102,148,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":2},{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[66,149,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":3},{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[33.5,150.5,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":4},{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[49.5,147.5,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":5},{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[137.5,149.5,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":6},{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[120.5,146,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":7},{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[170.5,150,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":8},{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[153,146,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":9}]},{"nm":"","id":"comp_2","layers":[{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[84,172.5,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":1},{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[102,174.5,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":2},{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[66,175.5,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":3},{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[33.5,177,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":4},{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[49.5,174,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":5},{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[137.5,176,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":6},{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[120.5,172.5,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":7},{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[170.5,176.5,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":8},{"ty":2,"nm":"drop.png","sr":1,"st":0,"op":40,"ip":0,"hd":false,"cl":"png","ddd":0,"bm":0,"hasMask":false,"ao":0,"ks":{"a":{"a":0,"k":[8,8,0],"ix":1},"s":{"a":0,"k":[100,100,100],"ix":6},"sk":{"a":0,"k":0},"p":{"a":0,"k":[153,172.5,0],"ix":2},"r":{"a":0,"k":0,"ix":10},"sa":{"a":0,"k":0},"o":{"a":0,"k":100,"ix":11}},"ef":[],"refId":"image_1","ind":9}]}]}
+{
+  "nm": "Comp 1",
+  "ddd": 0,
+  "h": 200,
+  "w": 200,
+  "meta": {
+    "g": "@lottiefiles/toolkit-js 0.33.2"
+  },
+  "layers": [
+    {
+      "ty": 2,
+      "nm": "cloudDark.png",
+      "sr": 1,
+      "st": 0,
+      "op": 40,
+      "ip": 0,
+      "hd": false,
+      "cl": "png",
+      "ddd": 0,
+      "bm": 0,
+      "hasMask": false,
+      "ao": 0,
+      "ks": {
+        "a": {
+          "a": 0,
+          "k": [
+            128,
+            128,
+            0
+          ],
+          "ix": 1
+        },
+        "s": {
+          "a": 0,
+          "k": [
+            70.312,
+            70.312,
+            100
+          ],
+          "ix": 6
+        },
+        "sk": {
+          "a": 0,
+          "k": 0
+        },
+        "p": {
+          "a": 0,
+          "k": [
+            100,
+            56,
+            0
+          ],
+          "ix": 2
+        },
+        "r": {
+          "a": 0,
+          "k": 0,
+          "ix": 10
+        },
+        "sa": {
+          "a": 0,
+          "k": 0
+        },
+        "o": {
+          "a": 0,
+          "k": 100,
+          "ix": 11
+        }
+      },
+      "ef": [],
+      "refId": "image_0",
+      "ind": 1
+    },
+    {
+      "ty": 0,
+      "nm": "Drops1Row",
+      "sr": 1,
+      "st": 0,
+      "op": 40,
+      "ip": 0,
+      "hd": false,
+      "ddd": 0,
+      "bm": 0,
+      "hasMask": false,
+      "ao": 0,
+      "ks": {
+        "a": {
+          "a": 0,
+          "k": [
+            100,
+            100,
+            0
+          ],
+          "ix": 1
+        },
+        "s": {
+          "a": 0,
+          "k": [
+            100,
+            100,
+            100
+          ],
+          "ix": 6
+        },
+        "sk": {
+          "a": 0,
+          "k": 0
+        },
+        "p": {
+          "a": 0,
+          "k": [
+            100,
+            100,
+            0
+          ],
+          "ix": 2
+        },
+        "r": {
+          "a": 0,
+          "k": 0,
+          "ix": 10
+        },
+        "sa": {
+          "a": 0,
+          "k": 0
+        },
+        "o": {
+          "a": 1,
+          "k": [
+            {
+              "o": {
+                "x": 0.167,
+                "y": 0.167
+              },
+              "i": {
+                "x": 0.833,
+                "y": 0.833
+              },
+              "s": [
+                40
+              ],
+              "t": 0
+            },
+            {
+              "o": {
+                "x": 0.167,
+                "y": 0.167
+              },
+              "i": {
+                "x": 0.833,
+                "y": 0.833
+              },
+              "s": [
+                100
+              ],
+              "t": 5
+            },
+            {
+              "s": [
+                40
+              ],
+              "t": 15
+            }
+          ],
+          "ix": 11
+        }
+      },
+      "ef": [],
+      "w": 200,
+      "h": 200,
+      "refId": "comp_0",
+      "ind": 2
+    },
+    {
+      "ty": 0,
+      "nm": "Drops2Row",
+      "sr": 1,
+      "st": 0,
+      "op": 40,
+      "ip": 0,
+      "hd": false,
+      "ddd": 0,
+      "bm": 0,
+      "hasMask": false,
+      "ao": 0,
+      "ks": {
+        "a": {
+          "a": 0,
+          "k": [
+            100,
+            100,
+            0
+          ],
+          "ix": 1
+        },
+        "s": {
+          "a": 0,
+          "k": [
+            100,
+            100,
+            100
+          ],
+          "ix": 6
+        },
+        "sk": {
+          "a": 0,
+          "k": 0
+        },
+        "p": {
+          "a": 0,
+          "k": [
+            100,
+            100,
+            0
+          ],
+          "ix": 2
+        },
+        "r": {
+          "a": 0,
+          "k": 0,
+          "ix": 10
+        },
+        "sa": {
+          "a": 0,
+          "k": 0
+        },
+        "o": {
+          "a": 1,
+          "k": [
+            {
+              "o": {
+                "x": 0.167,
+                "y": 0.167
+              },
+              "i": {
+                "x": 0.833,
+                "y": 0.833
+              },
+              "s": [
+                40
+              ],
+              "t": 0
+            },
+            {
+              "o": {
+                "x": 0.167,
+                "y": 0.167
+              },
+              "i": {
+                "x": 0.833,
+                "y": 0.833
+              },
+              "s": [
+                100
+              ],
+              "t": 25
+            },
+            {
+              "s": [
+                40
+              ],
+              "t": 35
+            }
+          ],
+          "ix": 11
+        }
+      },
+      "ef": [],
+      "w": 200,
+      "h": 200,
+      "refId": "comp_1",
+      "ind": 3
+    },
+    {
+      "ty": 0,
+      "nm": "Drops3Row",
+      "sr": 1,
+      "st": 0,
+      "op": 40,
+      "ip": 0,
+      "hd": false,
+      "ddd": 0,
+      "bm": 0,
+      "hasMask": false,
+      "ao": 0,
+      "ks": {
+        "a": {
+          "a": 0,
+          "k": [
+            100,
+            100,
+            0
+          ],
+          "ix": 1
+        },
+        "s": {
+          "a": 0,
+          "k": [
+            100,
+            100,
+            100
+          ],
+          "ix": 6
+        },
+        "sk": {
+          "a": 0,
+          "k": 0
+        },
+        "p": {
+          "a": 0,
+          "k": [
+            100,
+            100,
+            0
+          ],
+          "ix": 2
+        },
+        "r": {
+          "a": 0,
+          "k": 0,
+          "ix": 10
+        },
+        "sa": {
+          "a": 0,
+          "k": 0
+        },
+        "o": {
+          "a": 1,
+          "k": [
+            {
+              "o": {
+                "x": 0.167,
+                "y": 0.167
+              },
+              "i": {
+                "x": 0.833,
+                "y": 0.833
+              },
+              "s": [
+                40
+              ],
+              "t": 4
+            },
+            {
+              "s": [
+                100
+              ],
+              "t": 41
+            }
+          ],
+          "ix": 11
+        }
+      },
+      "ef": [],
+      "w": 200,
+      "h": 200,
+      "refId": "comp_2",
+      "ind": 4
+    }
+  ],
+  "v": "5.3.4",
+  "fr": 20,
+  "op": 40,
+  "ip": 0,
+  "assets": [
+    {
+      "id": "image_0",
+      "u": "",
+      "e": 1,
+      "w": 256,
+      "h": 256,
+      "p": "data:image/png;base64,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"
+    },
+    {
+      "id": "image_1",
+      "u": "",
+      "e": 1,
+      "w": 16,
+      "h": 16,
+      "p": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABpklEQVQ4T43STSh0URgH8Od5zrlz3TuSGotRb6IszAwLL2GGXs1GlsxIURZsbO0sydLS6t3RIIYsLUSauDP5GLGVFEVTbH3l5j4iNHfmXs1Znud/fv3vPQfhlxVZPxtFFGp6oOm/WwzdBpHk0T+S+iYgeYgwutcXyDhlHYG2tcM6hby7SFT7dSiHDC378WCuECkC6ucuVL//cRekJ2IPc/r5/jl6Mt5q5u8XAV3J02lQ1Cnnuji1HwvMuAIdq9m/UpbtAZHX5d+8WPjWmOlvuvye2xpE1k7TJNWC6gUU8pbRH+otAsJL2WGhacuArhfzIxFh5/et/KTDKydJoWqDTtV1haBaVyD3ZMKTaQEwzBrx4ORHNg/I5oSq+0sCAM6NWLDBBnQsHjxKb4X+28vMm90aseAfO5DIXMvyyppSAGbeSMdDA/ZPWDpIoFBGSNVKMHjMiIXmbQAwU3sicyf1Ch8K4Y4g7Bh9gR5AZDsAAOGV42br9XVbeMp8Tk3Ysq4U04ymhpqvHB/S5yYzhZcPF9iyugGpiqQUDHgDwCnVr02koqGH/HrvFbmBEX+1/bUAAAAASUVORK5CYII="
+    },
+    {
+      "nm": "",
+      "id": "comp_0",
+      "layers": [
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                31.5,
+                124,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 1
+        },
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                169.5,
+                124.5,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 2
+        },
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                152.5,
+                120,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 3
+        },
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                84.5,
+                118,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 4
+        },
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                67,
+                122.5,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 5
+        },
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                119.5,
+                119,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 6
+        },
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                137,
+                124,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 7
+        },
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                101.5,
+                122.5,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 8
+        },
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                49.5,
+                118.5,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 9
+        }
+      ]
+    },
+    {
+      "nm": "",
+      "id": "comp_1",
+      "layers": [
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                84,
+                146,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 1
+        },
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                102,
+                148,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 2
+        },
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                66,
+                149,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 3
+        },
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                33.5,
+                150.5,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 4
+        },
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                49.5,
+                147.5,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 5
+        },
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                137.5,
+                149.5,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 6
+        },
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                120.5,
+                146,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 7
+        },
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                170.5,
+                150,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 8
+        },
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                153,
+                146,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 9
+        }
+      ]
+    },
+    {
+      "nm": "",
+      "id": "comp_2",
+      "layers": [
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                84,
+                172.5,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 1
+        },
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                102,
+                174.5,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 2
+        },
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                66,
+                175.5,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 3
+        },
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                33.5,
+                177,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 4
+        },
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                49.5,
+                174,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 5
+        },
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                137.5,
+                176,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 6
+        },
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                120.5,
+                172.5,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 7
+        },
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                170.5,
+                176.5,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 8
+        },
+        {
+          "ty": 2,
+          "nm": "drop.png",
+          "sr": 1,
+          "st": 0,
+          "op": 40,
+          "ip": 0,
+          "hd": false,
+          "cl": "png",
+          "ddd": 0,
+          "bm": 0,
+          "hasMask": false,
+          "ao": 0,
+          "ks": {
+            "a": {
+              "a": 0,
+              "k": [
+                8,
+                8,
+                0
+              ],
+              "ix": 1
+            },
+            "s": {
+              "a": 0,
+              "k": [
+                100,
+                100,
+                100
+              ],
+              "ix": 6
+            },
+            "sk": {
+              "a": 0,
+              "k": 0
+            },
+            "p": {
+              "a": 0,
+              "k": [
+                153,
+                172.5,
+                0
+              ],
+              "ix": 2
+            },
+            "r": {
+              "a": 0,
+              "k": 0,
+              "ix": 10
+            },
+            "sa": {
+              "a": 0,
+              "k": 0
+            },
+            "o": {
+              "a": 0,
+              "k": 100,
+              "ix": 11
+            }
+          },
+          "ef": [],
+          "refId": "image_1",
+          "ind": 9
+        }
+      ]
+    }
+  ]
+}

@@ -39,4 +39,18 @@
     <string name="grant_location_permission">Grant Permission</string>
     <string name="stay_informed"><![CDATA[Stay informed & prepared with accurate forecasts at your fingertips.]]></string>
 
+    <string name="day_and_date_sample">Saturday, 20 April</string>
+    <string name="address_name_sample">London, United Kingdom</string>
+    <string name="is_day_sample">Tonight</string>
+    <string name="current_temperature_sample">27 °C</string>
+    <string name="current_apparent_temperature_sample">Feels like 32 °C</string>
+    <string name="precipitation_probability_sample">58 %</string>
+    <string name="wind_speed_sample">8 km/h</string>
+    <string name="rain_sum_sample">11 mm</string>
+    <string name="today">Today</string>
+    <string name="next_7_days">Next 7 days</string>
+    <string name="hour_time_sample">02:00</string>
+    <string name="hourly_temperature_sample">18 °C</string>
+    <string name="search_hint">Search for a city</string>
+
 </resources>

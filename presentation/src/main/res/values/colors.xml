@@ -26,6 +26,31 @@
     <color name="permission_prompt_bg_stroke_color">@color/material_blue_500</color>
     <color name="permission_prompt_bg_solid_color">@color/material_light_blue_50</color>
 
+    <!--    Current Weather Fragment    -->
+    <color name="current_weather_screen_bg_gradient_start_color">@color/material_light_blue_100</color>
+    <color name="current_weather_screen_bg_gradient_center_color">@color/white</color>
+    <color name="current_weather_screen_bg_gradient_end_color">@color/white</color>
+
+    <color name="filter_icon_background_color">@color/white</color>
+    <color name="hourly_weather_rv_item_text_color">@color/material_blue_800</color>
+    <color name="hourly_weather_rv_item_bg_color">@color/white</color>
+    <color name="next_seven_days_text_color">@color/material_blue_600</color>
+    <color name="today_text_color">@color/black</color>
+    <color name="current_weather_code_text_color">@color/white</color>
+    <color name="current_is_day_text_color">@color/material_light_blue_50</color>
+    <color name="current_temperature_text_color">@color/material_light_blue_50</color>
+    <color name="current_apparent_temperature_text_color">@color/material_blue_900</color>
+
+    <color name="current_weather_probabilities_bg_gradient_start_color">@color/material_blue_100</color>
+    <color name="current_weather_probabilities_bg_gradient_center_color">@color/material_blue_300</color>
+    <color name="current_weather_probabilities_bg_gradient_end_color">@color/material_blue_100</color>
+
+    <color name="current_weather_card_bg_gradient_start_color">@color/material_blue_100</color>
+    <color name="current_weather_card_bg_gradient_center_color">@color/material_blue_300</color>
+    <color name="current_weather_card_bg_gradient_end_color">@color/material_blue_500</color>
+
+
+
 
     <!--    Material Colors    -->
     <!-- Blue -->
@@ -124,9 +149,6 @@
     <color name="material_orange_A400">#FF9100</color>
     <color name="material_orange_A700">#FF6D00</color>
 
-    Here's the theme with the provided Red and Deep Orange colors:
-
-    ```xml
     <!-- Red -->
     <color name="material_red_50">#FFEBEE</color>
     <color name="material_red_100">#FFCDD2</color>
