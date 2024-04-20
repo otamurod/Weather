@@ -182,4 +182,12 @@
     <color name="material_deep_orange_A400">#FF3D00</color>
     <color name="material_deep_orange_A700">#DD2C00</color>
 
+    <!--  Indicator Color  -->
+    <color name="indicatorColor1">#81AEF6</color>
+    <color name="indicatorColor2">#E84235</color>
+    <color name="indicatorColor3">#F9BB05</color>
+    <color name="indicatorColor4">#4184F2</color>
+    <color name="indicatorColor5">#34A752</color>
+    <color name="indicatorColor6">#E84235</color>
+
 </resources>

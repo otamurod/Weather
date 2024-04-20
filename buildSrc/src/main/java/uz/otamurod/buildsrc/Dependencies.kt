@@ -24,8 +24,8 @@ object Dependencies {
         const val splashScreen = "androidx.core:core-splashscreen:$splashScreenVersion"
 
         object Navigation {
-            private const val navigationVersion = "2.7.2"
-            private const val safeArgsGradleVersion = "2.7.2"
+            private const val navigationVersion = "2.7.7"
+            private const val safeArgsGradleVersion = "2.7.7"
             const val fragmentKtx = "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
             const val uiKtx = "androidx.navigation:navigation-ui-ktx:$navigationVersion"
             const val safeArgsGradlePlugin =

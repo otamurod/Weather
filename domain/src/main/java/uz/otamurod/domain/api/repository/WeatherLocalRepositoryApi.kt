@@ -10,7 +10,7 @@ interface WeatherLocalRepositoryApi {
      */
 
     // Device Location
-    suspend fun getDeviceLocation(): LastLocation
+    suspend fun getDeviceLocation(): LastLocation?
 
     // Searched Location
     suspend fun getSearchedPlaceById(id: Int): Place

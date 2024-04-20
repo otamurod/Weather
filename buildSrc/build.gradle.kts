@@ -13,6 +13,7 @@ dependencies {
     val androidVersion = "7.4.2"
     val kotlinVersion = "1.9.10"
     val hiltAndroidPluginVersion = "2.50"
+    val navArgsVersion = "2.7.7"
     val kspPluginVersion = "1.9.10-1.0.13"
     val r8Version = "8.2.42"
 
@@ -24,6 +25,9 @@ dependencies {
 
     // Hilt Android Plugin
     implementation("com.google.dagger:hilt-android-gradle-plugin:$hiltAndroidPluginVersion")
+
+    // Navigation Agrs Gradle Plugin
+    implementation("androidx.navigation:navigation-safe-args-gradle-plugin:$navArgsVersion")
 
     // KSP Plugin
     implementation("com.google.devtools.ksp:symbol-processing-gradle-plugin:$kspPluginVersion")

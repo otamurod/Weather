@@ -8,6 +8,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("android-module")
     id("com.google.devtools.ksp")
+    id("androidx.navigation.safeargs.kotlin")
     id("dagger.hilt.android.plugin")
 }
 
@@ -36,7 +37,6 @@ dependencies {
     implementation(Dependencies.AndroidX.constraintLayout)
     implementation(Dependencies.AndroidX.legacySupport)
     implementation(Dependencies.AndroidX.fragmentKtx)
-    implementation(Dependencies.AndroidX.splashScreen)
 
     // Retrofit2
     implementation(Dependencies.Retrofit2.retrofit)
