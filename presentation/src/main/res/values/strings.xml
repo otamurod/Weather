@@ -52,5 +52,11 @@
     <string name="hour_time_sample">02:00</string>
     <string name="hourly_temperature_sample">18 °C</string>
     <string name="search_hint">Search for a city</string>
+    <string name="week_day_short_sample">Mon</string>
+    <string name="week_date_short_sample">27</string>
+    <string name="week_date_sample">20 April</string>
+    <string name="week_day_sample">Monday</string>
+    <string name="week_day_max_temperature_sample">22</string>
+    <string name="week_day_min_temperature_sample">/17 °C</string>
 
 </resources>

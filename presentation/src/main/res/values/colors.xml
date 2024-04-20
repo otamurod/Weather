@@ -32,6 +32,7 @@
     <color name="current_weather_screen_bg_gradient_end_color">@color/white</color>
 
     <color name="filter_icon_background_color">@color/white</color>
+    <color name="weekly_forecast_rv_background_color">@color/white</color>
     <color name="hourly_weather_rv_item_text_color">@color/material_blue_800</color>
     <color name="hourly_weather_rv_item_bg_color">@color/white</color>
     <color name="next_seven_days_text_color">@color/material_blue_600</color>

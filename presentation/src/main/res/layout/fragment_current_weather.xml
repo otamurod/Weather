@@ -281,7 +281,7 @@
                     android:background="@drawable/current_weather_probabilities_bg"
                     android:elevation="4dp"
                     app:lottie_autoPlay="true"
-                    app:lottie_fileName="rain_sum.json"
+                    app:lottie_fileName="light_drizzle.json"
                     app:lottie_loop="true" />
 
                 <TextView
