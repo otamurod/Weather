@@ -9,7 +9,7 @@
         android:id="@+id/welcomeFragment"
         android:name="uz.otamurod.presentation.ui.welcome.WelcomeFragment"
         android:label="fragment_welcome"
-        tools:layout="@layout/fragment_welcome" >
+        tools:layout="@layout/fragment_welcome">
         <action
             android:id="@+id/action_welcomeFragment_to_currentWeatherFragment"
             app:destination="@id/currentWeatherFragment" />
@@ -18,12 +18,7 @@
         android:id="@+id/currentWeatherFragment"
         android:name="uz.otamurod.presentation.ui.current_weather.CurrentWeatherFragment"
         android:label="fragment_current_weather"
-        tools:layout="@layout/fragment_current_weather" >
-        <argument
-            android:name="lastLocation"
-            app:argType="uz.otamurod.domain.model.LastLocation"
-            app:nullable="true"
-            android:defaultValue="@null" />
+        tools:layout="@layout/fragment_current_weather">
         <action
             android:id="@+id/action_currentWeatherFragment_to_weeklyForecastFragment"
             app:destination="@id/weeklyForecastFragment" />
@@ -35,11 +30,7 @@
         android:id="@+id/weeklyForecastFragment"
         android:name="uz.otamurod.presentation.ui.weekly_forecast.WeeklyForecastFragment"
         android:label="fragment_weekly_forecast"
-        tools:layout="@layout/fragment_weekly_forecast" >
-        <argument
-            android:name="forecast"
-            app:argType="uz.otamurod.domain.api.model.weather.Forecast" />
-    </fragment>
+        tools:layout="@layout/fragment_weekly_forecast" />
     <fragment
         android:id="@+id/locationSearchFragment"
         android:name="uz.otamurod.presentation.ui.location_search.LocationSearchFragment"

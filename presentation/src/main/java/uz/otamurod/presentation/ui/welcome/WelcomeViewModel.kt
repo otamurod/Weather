@@ -26,7 +26,7 @@ class WelcomeViewModel @Inject constructor(
     private val lastLocationInteractorApi: LastLocationInteractorApi
 ) : BaseViewModel() {
     private val context: LiveData<Context> by lazy { MutableLiveData() }
-    private val currentLocationTracker = CurrentLocationTracker()
+    private lateinit var currentLocationTracker: CurrentLocationTracker
     private val isNetworkConnected: LiveData<Boolean> by lazy { MutableLiveData() }
     private val isLastLocationAccessed: LiveData<Boolean> by lazy { MutableLiveData() }
 
@@ -82,6 +82,7 @@ class WelcomeViewModel @Inject constructor(
     }
 
     suspend fun setContext(context: Context, networkStatusListener: NetworkStatusListener?) {
+        currentLocationTracker = CurrentLocationTracker(context)
         this.context.postValue(context)
 
         if (isNetworkConnected(context, networkStatusListener)) {

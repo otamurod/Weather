@@ -1,7 +1,6 @@
 package uz.otamurod.presentation.utils.helper
 
 import android.Manifest
-import android.app.Application
 import android.content.Context
 import android.content.pm.PackageManager
 import android.location.Address
@@ -14,15 +13,11 @@ import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import kotlinx.coroutines.suspendCancellableCoroutine
 import java.util.*
-import javax.inject.Inject
 import kotlin.coroutines.resume
 
-class CurrentLocationTracker {
-    @Inject
-    lateinit var application: Application
-
+class CurrentLocationTracker(private val applicationContext: Context) {
     private val locationClient: FusedLocationProviderClient =
-        LocationServices.getFusedLocationProviderClient(application.applicationContext)
+        LocationServices.getFusedLocationProviderClient(applicationContext)
 
     suspend fun getLocation(): Location? {
         val hasAccessFineLocationPermission = checkHasAccessFineLocationPermission()
@@ -59,19 +54,19 @@ class CurrentLocationTracker {
 
     fun checkHasAccessFineLocationPermission(): Boolean {
         return ContextCompat.checkSelfPermission(
-            application.applicationContext, Manifest.permission.ACCESS_FINE_LOCATION
+            applicationContext, Manifest.permission.ACCESS_FINE_LOCATION
         ) == PackageManager.PERMISSION_GRANTED
     }
 
     fun checkHasAccessCoarseLocationPermission(): Boolean {
         return ContextCompat.checkSelfPermission(
-            application.applicationContext, Manifest.permission.ACCESS_COARSE_LOCATION
+            applicationContext, Manifest.permission.ACCESS_COARSE_LOCATION
         ) == PackageManager.PERMISSION_GRANTED
     }
 
     fun checkGpsEnabled(): Boolean {
         val locationManager =
-            application.getSystemService(Context.LOCATION_SERVICE) as LocationManager
+            applicationContext.getSystemService(Context.LOCATION_SERVICE) as LocationManager
 
         return locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER) ||
                 locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
@@ -81,7 +76,7 @@ class CurrentLocationTracker {
         var addressText = ""
 
         Geocoder(
-            application.applicationContext, Locale.getDefault()
+            applicationContext, Locale.getDefault()
         ).apply {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 getFromLocation(latitude, longitude, 1, object : Geocoder.GeocodeListener {

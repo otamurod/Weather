@@ -8,6 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import uz.otamurod.presentation.R
 import uz.otamurod.presentation.databinding.FragmentWelcomeBinding
@@ -47,12 +48,17 @@ class WelcomeFragment : BaseFragment(), NetworkStatusListener {
                 binding.swipeRefreshLayout.isRefreshing = false
             } else {
                 // navigate to current weather fragment and pass last location as argument
-                val action =
-                    WelcomeFragmentDirections.actionWelcomeFragmentToCurrentWeatherFragment(
-                        lastLocation
-                    )
+                val bundle = Bundle().apply {
+                    putSerializable("lastLocation", lastLocation)
+                }
 
-                findNavController().navigate(action)
+                lifecycleScope.launch {
+                    delay(3000)
+                    findNavController().navigate(
+                        R.id.currentWeatherFragment,
+                        bundle
+                    )
+                }
             }
         }
 

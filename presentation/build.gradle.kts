@@ -8,7 +8,6 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("android-module")
     id("com.google.devtools.ksp")
-    id("androidx.navigation.safeargs.kotlin")
     id("dagger.hilt.android.plugin")
 }
 
