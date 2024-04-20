@@ -58,5 +58,7 @@
     <string name="week_day_sample">Monday</string>
     <string name="week_day_max_temperature_sample">22</string>
     <string name="week_day_min_temperature_sample">/17 °C</string>
+    <string name="pick_location">Pick location</string>
+    <string name="pick_location_guide">Find the area or city that you want to know the detailed weather info at this time</string>
 
 </resources>
