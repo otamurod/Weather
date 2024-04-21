@@ -6,6 +6,7 @@
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/placeItemContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -26,6 +27,7 @@
             style="@style/Widget.NextSevenDays.TextView.TextAppearance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/dailyly_weather_rv_item_bg_color"
             android:drawableStart="@drawable/ic_navigation"
             android:maxLines="1"
             android:padding="12dp"

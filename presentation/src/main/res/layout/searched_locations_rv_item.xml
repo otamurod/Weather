@@ -22,6 +22,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:background="@color/dailyly_weather_rv_item_bg_color"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
