@@ -3,6 +3,7 @@ package uz.otamurod.presentation
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
+import androidx.navigation.findNavController
 import com.akexorcist.localizationactivity.ui.LocalizationActivity
 import dagger.hilt.android.AndroidEntryPoint
 import uz.otamurod.presentation.databinding.ActivityMainBinding
@@ -22,4 +23,14 @@ class MainActivity : LocalizationActivity() {
 
         setContentView(binding.root)
     }
+
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
+        if (binding.navHostFragment.findNavController().currentDestination?.id == R.id.currentWeatherFragment) {
+            finish()
+        }
+
+        super.onBackPressed()
+    }
+
 }
