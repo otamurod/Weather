@@ -19,17 +19,18 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/weekDayItemContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/current_weather_probabilities_bg"
             android:padding="6dp">
 
             <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/hourlyWeatherCodeAnimation"
+                android:id="@+id/dailyWeatherCodeAnimation"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:elevation="4dp"
-                app:layout_constraintBottom_toTopOf="@id/weekDateShortTextView"
+                app:layout_constraintBottom_toTopOf="@id/dayOfMonthTextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -38,19 +39,19 @@
                 app:lottie_loop="true" />
 
             <TextView
-                android:id="@+id/weekDateShortTextView"
+                android:id="@+id/dayOfMonthTextView"
                 style="@style/Widget.HourlyWeatherRvItem.TextView.TextAppearance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/week_date_short_sample"
                 android:textSize="22sp"
-                app:layout_constraintBottom_toTopOf="@id/weekDayShortTextView"
+                app:layout_constraintBottom_toTopOf="@id/dayOfWeekShortTextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/hourlyWeatherCodeAnimation" />
+                app:layout_constraintTop_toBottomOf="@id/dailyWeatherCodeAnimation" />
 
             <TextView
-                android:id="@+id/weekDayShortTextView"
+                android:id="@+id/dayOfWeekShortTextView"
                 style="@style/Widget.HourlyWeatherRvItem.TextView.TextAppearance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -60,7 +61,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/weekDateShortTextView" />
+                app:layout_constraintTop_toBottomOf="@id/dayOfMonthTextView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

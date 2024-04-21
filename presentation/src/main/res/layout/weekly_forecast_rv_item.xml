@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         app:cardCornerRadius="16dp"
         app:cardElevation="4dp"
-        app:cardMaxElevation="8dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="8dp"
+        app:cardMaxElevation="4dp"
         app:cardUseCompatPadding="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,9 +19,10 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/weekDayItemContainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/hourly_weather_rv_item_bg_color"
+            android:background="@color/dailyly_weather_rv_item_bg_color"
             android:padding="6dp">
 
             <TextView
@@ -32,12 +31,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="4dp"
-                android:text="@string/week_day_sample"
                 android:textColor="@color/today_text_color"
                 android:textSize="22sp"
                 app:layout_constraintBottom_toTopOf="@id/weekDateTextView"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/week_day_sample" />
 
             <TextView
                 android:id="@+id/weekDateTextView"
@@ -45,12 +44,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:alpha="0.6"
-                android:text="@string/week_date_sample"
                 android:textColor="@color/today_text_color"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/weekDayTextView" />
+                app:layout_constraintTop_toBottomOf="@id/weekDayTextView"
+                tools:text="@string/week_date_sample" />
 
             <TextView
                 android:id="@+id/weekDayTemperatureMaxTextView"
@@ -61,33 +60,33 @@
                 android:gravity="end"
                 android:paddingEnd="0dp"
                 android:paddingBottom="4dp"
-                android:text="@string/week_day_max_temperature_sample"
-                android:textSize="24sp"
+                android:textAlignment="textEnd"
+                android:textSize="26sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/weekDayTemperatureMinTextView"
-                app:layout_constraintStart_toEndOf="@id/weekDayTextView"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/week_day_max_temperature_sample" />
 
             <TextView
                 android:id="@+id/weekDayTemperatureMinTextView"
                 style="@style/Widget.HourlyWeatherRvItem.TextView.TextAppearance"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
                 android:alpha="0.8"
                 android:gravity="start"
                 android:paddingStart="0dp"
-                android:text="@string/week_day_min_temperature_sample"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@id/weekDayTemperatureMaxTextView"
                 app:layout_constraintEnd_toStartOf="@id/weekDayWeatherCodeAnimation"
-                app:layout_constraintStart_toEndOf="@id/weekDayTemperatureMaxTextView"
-                app:layout_constraintTop_toTopOf="@id/weekDayTemperatureMaxTextView" />
+                app:layout_constraintTop_toTopOf="@id/weekDayTemperatureMaxTextView"
+                tools:text="@string/week_day_min_temperature_sample" />
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/weekDayWeatherCodeAnimation"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_margin="12dp"
+                android:layout_margin="8dp"
                 android:elevation="4dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

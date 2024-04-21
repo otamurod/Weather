@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefreshLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/next_week_weather_screen_bg"
@@ -10,292 +11,289 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/nextSevenDaysTextView"
-            style="@style/Widget.NextSevenDays.TextView.TextAppearance"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/next_7_days"
-            android:textAllCaps="true"
-            android:textColor="@color/white"
-            app:drawableRightCompat="@drawable/ic_arrow_forward"
-            app:layout_constraintBottom_toBottomOf="@id/horizontalGuideline6"
-            app:layout_constraintEnd_toEndOf="@id/verticalGuideline92"
-            app:layout_constraintStart_toStartOf="@id/verticalGuideline8"
-            app:layout_constraintTop_toTopOf="@id/horizontalGuideline6" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/weekDaysWeatherRecyclerView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintEnd_toEndOf="@id/verticalGuideline92"
-            app:layout_constraintStart_toStartOf="@id/verticalGuideline8"
-            app:layout_constraintTop_toBottomOf="@id/nextSevenDaysTextView"
-            tools:listitem="@layout/day_rv_item" />
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/lottieCurrentWeatherCodeAnimation"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="-32dp"
-            android:elevation="16dp"
-            android:padding="8dp"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintStart_toStartOf="@id/weekDayWeatherCard"
-            app:layout_constraintTop_toTopOf="@id/weekDayWeatherCard"
-            app:lottie_autoPlay="true"
-            app:lottie_fileName="mainly_clear.json"
-            app:lottie_loop="true" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/weekDayWeatherCard"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="24dp"
-            app:cardElevation="10dp"
-            app:cardMaxElevation="12dp"
-            app:cardUseCompatPadding="false"
-            app:layout_constraintBottom_toBottomOf="@id/horizontalGuideline50"
-            app:layout_constraintEnd_toEndOf="@id/verticalGuideline92"
-            app:layout_constraintStart_toStartOf="@id/verticalGuideline8"
-            app:layout_constraintTop_toTopOf="@id/horizontalGuideline50">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/current_weather_card_bg"
-                android:padding="12dp">
-
-                <TextView
-                    android:id="@+id/weekDayWeatherCodeTextView"
-                    style="@style/Widget.CurrentWeatherCode.TextView.TextAppearance"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/mainly_clear"
-                    app:layout_constraintBottom_toTopOf="@id/isDayTextView"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/weekDayApparentTemperatureTextView" />
-
-                <TextView
-                    android:id="@+id/isDayTextView"
-                    style="@style/Widget.IsDay.TextView.TextAppearance"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/is_day_sample"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/weekDayWeatherCodeTextView" />
-
-                <TextView
-                    android:id="@+id/weekDayTemperatureTextView"
-                    style="@style/Widget.CurrentTemperature.TextView.TextAppearance"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/current_temperature_sample"
-                    app:layout_constraintBottom_toTopOf="@id/weekDayApparentTemperatureTextView"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@id/weekDayApparentTemperatureTextView"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/weekDayApparentTemperatureTextView"
-                    style="@style/Widget.CurrentApparentTemperature.TextView.TextAppearance"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="24dp"
-                    android:text="@string/current_apparent_temperature_sample"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/weekDayTemperatureTextView" />
-
-                <com.airbnb.lottie.LottieAnimationView
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_marginStart="48dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="4dp"
-                    android:elevation="4dp"
-                    app:layout_constraintBottom_toTopOf="@id/weekDayWeatherProbabilitiesLayout"
-                    app:layout_constraintEnd_toEndOf="@id/weekDayApparentTemperatureTextView"
-                    app:layout_constraintStart_toEndOf="@id/weekDayWeatherCodeTextView"
-                    app:layout_constraintTop_toBottomOf="@id/weekDayApparentTemperatureTextView"
-                    app:lottie_autoPlay="true"
-                    app:lottie_fileName="wind_speed.json"
-                    app:lottie_loop="true" />
-
-                <LinearLayout
-                    android:id="@+id/weekDayWeatherProbabilitiesLayout"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/isDayTextView">
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <com.airbnb.lottie.LottieAnimationView
-                            android:layout_width="56dp"
-                            android:layout_height="56dp"
-                            android:background="@drawable/current_weather_probabilities_bg"
-                            android:elevation="4dp"
-                            app:lottie_autoPlay="true"
-                            app:lottie_fileName="precipitation.json"
-                            app:lottie_loop="true" />
-
-                        <TextView
-                            android:id="@+id/precipitationProbabilityTextView"
-                            style="@style/Widget.CurrentWeatherProbabilities.TextView.TextAppearance"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/precipitation_probability_sample" />
-
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="2" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <com.airbnb.lottie.LottieAnimationView
-                            android:layout_width="56dp"
-                            android:layout_height="56dp"
-                            android:background="@drawable/current_weather_probabilities_bg"
-                            android:elevation="4dp"
-                            app:lottie_autoPlay="true"
-                            app:lottie_fileName="wind_speed.json"
-                            app:lottie_loop="true" />
-
-                        <TextView
-                            android:id="@+id/windSpeedTextView"
-                            style="@style/Widget.CurrentWeatherProbabilities.TextView.TextAppearance"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/wind_speed_sample" />
-
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="2" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <com.airbnb.lottie.LottieAnimationView
-                            android:layout_width="56dp"
-                            android:layout_height="56dp"
-                            android:background="@drawable/current_weather_probabilities_bg"
-                            android:elevation="4dp"
-                            app:lottie_autoPlay="true"
-                            app:lottie_fileName="light_drizzle.json"
-                            app:lottie_loop="true" />
-
-                        <TextView
-                            android:id="@+id/rainSumTextView"
-                            style="@style/Widget.CurrentWeatherProbabilities.TextView.TextAppearance"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/rain_sum_sample" />
-
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" />
-
-                </LinearLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.cardview.widget.CardView>
+        android:layout_height="match_parent">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="-64dp"
+            android:elevation="6dp"
             android:src="@drawable/weekly_forecast_rv_bg"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/horizontalGuideline50" />
+            app:layout_constraintTop_toTopOf="@id/middleGuideline" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/weeklyWeatherForecastRecyclerView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="vertical"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="@id/horizontalGuideline96"
-            app:layout_constraintEnd_toEndOf="@id/verticalGuideline92"
-            app:layout_constraintStart_toStartOf="@id/verticalGuideline8"
-            app:layout_constraintTop_toBottomOf="@id/weekDayWeatherCard"
-            tools:listitem="@layout/weekly_forecast_rv_item" />
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="8dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/nextSevenDaysTextView"
+                    style="@style/Widget.NextSevenDays.TextView.TextAppearance"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/next_7_days"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@id/horizontalGuideline6"
+                    app:layout_constraintEnd_toEndOf="@id/verticalGuideline92"
+                    app:layout_constraintStart_toStartOf="@id/verticalGuideline8"
+                    app:layout_constraintTop_toTopOf="@id/horizontalGuideline6" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/weekDaysWeatherRecyclerView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@id/verticalGuideline92"
+                    app:layout_constraintStart_toStartOf="@id/verticalGuideline8"
+                    app:layout_constraintTop_toBottomOf="@id/nextSevenDaysTextView"
+                    tools:listitem="@layout/day_rv_item" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/weekDayWeatherCodeAnimation"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="-32dp"
+                    android:elevation="16dp"
+                    android:padding="8dp"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintStart_toStartOf="@id/weekDayWeatherCard"
+                    app:layout_constraintTop_toTopOf="@id/weekDayWeatherCard"
+                    app:lottie_autoPlay="true"
+                    app:lottie_fileName="mainly_clear.json"
+                    app:lottie_loop="true" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/weekDayWeatherCard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="10dp"
+                    app:cardMaxElevation="12dp"
+                    app:cardUseCompatPadding="false"
+                    app:layout_constraintBottom_toBottomOf="@id/horizontalGuideline50"
+                    app:layout_constraintEnd_toEndOf="@id/verticalGuideline92"
+                    app:layout_constraintStart_toStartOf="@id/verticalGuideline8"
+                    app:layout_constraintTop_toTopOf="@id/horizontalGuideline50">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/current_weather_card_bg"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/weekDayWeatherCodeTextView"
+                            style="@style/Widget.CurrentWeatherCode.TextView.TextAppearance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="@string/mainly_clear"
+                            app:layout_constraintBottom_toTopOf="@id/weekDayWeatherProbabilitiesLayout"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/weekDayTemperatureTextView" />
+
+                        <TextView
+                            android:id="@+id/weekDayTemperatureTextView"
+                            style="@style/Widget.CurrentTemperature.TextView.TextAppearance"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            tools:text="@string/current_temperature_sample"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginStart="48dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="4dp"
+                            android:elevation="4dp"
+                            android:scaleType="fitXY"
+                            app:layout_constraintBottom_toTopOf="@id/weekDayWeatherProbabilitiesLayout"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/weekDayWeatherCodeTextView"
+                            app:layout_constraintTop_toBottomOf="@id/weekDayTemperatureTextView"
+                            app:lottie_autoPlay="true"
+                            app:lottie_fileName="wind_speed.json"
+                            app:lottie_loop="true" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/weekDayWeatherProbabilitiesLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/weekDayWeatherCodeTextView">
+
+                            <LinearLayout
+                                android:id="@+id/precipitationProbabilityLayout"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/windSpeedLayout"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:layout_width="56dp"
+                                    android:layout_height="56dp"
+                                    android:background="@drawable/current_weather_probabilities_bg"
+                                    android:elevation="4dp"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_fileName="precipitation.json"
+                                    app:lottie_loop="true" />
+
+                                <TextView
+                                    android:id="@+id/precipitationProbabilityTextView"
+                                    style="@style/Widget.CurrentWeatherProbabilities.TextView.TextAppearance"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    tools:text="@string/precipitation_probability_sample" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/windSpeedLayout"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="@+id/precipitationProbabilityLayout"
+                                app:layout_constraintEnd_toStartOf="@+id/rainSumLayout"
+                                app:layout_constraintStart_toEndOf="@+id/precipitationProbabilityLayout"
+                                app:layout_constraintTop_toTopOf="@+id/precipitationProbabilityLayout">
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:layout_width="56dp"
+                                    android:layout_height="56dp"
+                                    android:background="@drawable/current_weather_probabilities_bg"
+                                    android:elevation="4dp"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_fileName="wind_speed.json"
+                                    app:lottie_loop="true" />
+
+                                <TextView
+                                    android:id="@+id/windSpeedTextView"
+                                    style="@style/Widget.CurrentWeatherProbabilities.TextView.TextAppearance"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    tools:text="@string/wind_speed_sample" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/rainSumLayout"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="@id/windSpeedLayout"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/windSpeedLayout"
+                                app:layout_constraintTop_toTopOf="@id/windSpeedLayout">
+
+                                <com.airbnb.lottie.LottieAnimationView
+                                    android:layout_width="56dp"
+                                    android:layout_height="56dp"
+                                    android:background="@drawable/current_weather_probabilities_bg"
+                                    android:elevation="4dp"
+                                    app:lottie_autoPlay="true"
+                                    app:lottie_fileName="light_drizzle.json"
+                                    app:lottie_loop="true" />
+
+                                <TextView
+                                    android:id="@+id/rainSumTextView"
+                                    style="@style/Widget.CurrentWeatherProbabilities.TextView.TextAppearance"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    tools:text="@string/rain_sum_sample" />
+
+                            </LinearLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/weeklyWeatherForecastRecyclerView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="@id/horizontalGuideline96"
+                    app:layout_constraintEnd_toEndOf="@id/verticalGuideline92"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@id/verticalGuideline8"
+                    app:layout_constraintTop_toBottomOf="@id/weekDayWeatherCard"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:listitem="@layout/weekly_forecast_rv_item" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/verticalGuideline8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.08" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/verticalGuideline92"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.92" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/horizontalGuideline50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="360dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/horizontalGuideline6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="50dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/horizontalGuideline96"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_end="32dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/verticalGuideline8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="32dp" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/verticalGuideline92"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="32dp" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/horizontalGuideline50"
+            android:id="@+id/middleGuideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="360dp" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/horizontalGuideline6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="50dp" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/horizontalGuideline96"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_end="32dp" />
+            app:layout_constraintGuide_percent="0.50" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.core.widget.NestedScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
