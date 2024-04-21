@@ -23,7 +23,7 @@ sealed class WeatherType(
 
     object Overcast : WeatherType(
         weatherDescription = R.string.overcast,
-        animationAssetFileName = "overcast.json"
+        animationAssetFileName = "partly_cloudy.json"
     )
 
     object Foggy : WeatherType(

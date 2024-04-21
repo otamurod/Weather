@@ -43,21 +43,22 @@ class WelcomeFragment : BaseFragment(), NetworkStatusListener {
     }
 
     private fun setUpObservers() {
+        viewModel.appVersionName.observe(viewLifecycleOwner) {
+            binding.versionNameTextView.text =
+                String.format("%s %s", getString(R.string.version), it)
+        }
+
         viewModel.lastLocation.observe(viewLifecycleOwner) { lastLocation ->
             if (lastLocation == null) {
                 binding.swipeRefreshLayout.isRefreshing = false
             } else {
                 // navigate to current weather fragment and pass last location as argument
-                val bundle = Bundle().apply {
-                    putSerializable("lastLocation", lastLocation)
-                }
-
                 lifecycleScope.launch {
+                    updateShowGpsEnablePromptVisibility(false)
+                    updateTurnOnNetworkVisibility(false)
+
                     delay(3000)
-                    findNavController().navigate(
-                        R.id.currentWeatherFragment,
-                        bundle
-                    )
+                    findNavController().navigate(R.id.currentWeatherFragment)
                 }
             }
         }

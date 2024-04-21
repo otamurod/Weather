@@ -4,7 +4,6 @@ import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 import uz.otamurod.data.network.entities.weather.ForecastResponse
-import uz.otamurod.domain.util.DataState
 
 interface OpenMeteoApiService {
 
@@ -18,6 +17,6 @@ interface OpenMeteoApiService {
         @Query("hourly") hourlyFields: String = "temperature_2m,apparent_temperature,precipitation_probability,weather_code",
         @Query("daily") dailyFields: String = "weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset,rain_sum,precipitation_probability_max,wind_speed_10m_max",
         @Query("timezone") timezone: String = "auto"
-    ): Response<DataState<ForecastResponse>>
+    ): Response<ForecastResponse>
 
 }

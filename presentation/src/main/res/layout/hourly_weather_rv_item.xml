@@ -17,9 +17,10 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/hourly_weather_rv_item_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/hourly_weather_rv_item_bg_color"
+            android:background="@drawable/current_weather_probabilities_bg"
             android:padding="6dp">
 
             <TextView

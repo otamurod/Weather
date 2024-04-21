@@ -138,4 +138,10 @@ object Dependencies {
         const val mapsServices = "com.google.maps:google-maps-services:$mapsServicesVersion"
         const val mapsUtils = "com.google.maps.android:android-maps-utils:$mapsUtilsVersion"
     }
+
+    object Glide {
+        const val glideVersion = "4.16.0"
+        const val glideCompiler = "com.github.bumptech.glide:ksp:$glideVersion" // replaced with ksp
+        const val glide = "com.github.bumptech.glide:glide:$glideVersion"
+    }
 }

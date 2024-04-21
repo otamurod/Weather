@@ -20,13 +20,15 @@ class OpenMeteoRemoteRepository @Inject constructor(
 
             val response = openMeteoNetworkDataSource.getForecast(latitude, longitude)
             if (response.isSuccessful) {
-                val dataState = response.body()
-                if (dataState != null) {
-                    val forecastResponse = dataState.data
-                    forecastResponse?.let {
+                val forecastResponse = response.body()
+                if (forecastResponse != null) {
+                    forecastResponse.let {
                         val forecast = ForecastResponseMapper.Forecast(it).invoke()
                         emit(DataState.Success(forecast))
+                        // TODO: Save into DB
                     }
+                } else {
+                    emit(DataState.Error("Could not fetch forecast! @null"))
                 }
             } else {
                 emit(DataState.Error(response.message()))
@@ -34,5 +36,9 @@ class OpenMeteoRemoteRepository @Inject constructor(
         } catch (e: Exception) {
             emit(DataState.Error(e.message.toString()))
         }
+    }
+
+    companion object {
+        private const val TAG = "OpenMeteoRemoteRepo"
     }
 }

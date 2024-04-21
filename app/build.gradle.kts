@@ -70,8 +70,6 @@ dependencies {
     // AndroidX
     implementation(Dependencies.AndroidX.coreKtx)
     implementation(Dependencies.AndroidX.appCompat)
-    implementation(Dependencies.AndroidX.material)
-    implementation(Dependencies.AndroidX.constraintLayout)
 
     // Room, Kotlin Extensions and Coroutines support for Room
     implementation(Dependencies.Room.runtime)

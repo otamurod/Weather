@@ -15,7 +15,7 @@
 
     <style name="Widget.WelcomeGuide.TextView.TextAppearance" parent="TextAppearance.Material3.HeadlineLarge">
         <item name="android:fontFamily">@font/sf_pro_display</item>
-        <item name="android:lineSpacingExtra">6dp</item>
+        <item name="android:lineSpacingExtra">5dp</item>
         <item name="android:textSize">28sp</item>
         <item name="android:textStyle">bold|italic</item>
         <item name="android:textColor">@color/welcome_guide_color</item>
@@ -90,12 +90,12 @@
 
     <style name="Widget.CurrentWeatherProbabilities.TextView.TextAppearance" parent="TextAppearance.Material3.BodySmall">
         <item name="android:fontFamily">@font/sf_pro_display</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/today_text_color</item>
         <item name="android:textAlignment">center</item>
         <item name="android:gravity">center</item>
-        <item name="android:padding">4dp</item>
+        <item name="android:paddingTop">6dp</item>
     </style>
 
     <style name="Widget.CurrentWeatherCode.TextView.TextAppearance" parent="TextAppearance.Material3.BodyMedium">
@@ -125,6 +125,11 @@
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/current_apparent_temperature_text_color</item>
+    </style>
+
+    <!--    Settings    -->
+    <style name="BrandedSwitch.control" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/theme_switcher_active_color</item>
     </style>
 
 </resources>

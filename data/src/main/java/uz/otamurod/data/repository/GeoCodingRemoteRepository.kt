@@ -21,14 +21,15 @@ class GeoCodingRemoteRepository @Inject constructor(
 
             val response = geoCodingNetworkDataSource.searchLocation(name, language)
             if (response.isSuccessful) {
-                val dataState = response.body()
-                if (dataState != null) {
-                    val locationSearchResponse = dataState.data
-                    locationSearchResponse?.let {
+                val locationSearchResponse = response.body()
+                if (locationSearchResponse != null) {
+                    locationSearchResponse.let {
                         val locationSearch =
                             LocationSearchResponseMapper.LocationSearch(it).invoke()
                         emit(DataState.Success(locationSearch))
                     }
+                }else{
+                    emit(DataState.Error("Could not fetch location! @null"))
                 }
             } else {
                 emit(DataState.Error(response.message()))

@@ -83,4 +83,8 @@ dependencies {
 
     // Location Services
     implementation(Dependencies.GoogleServices.playServicesLocation)
+
+    // Glide Dependencies
+    ksp(Dependencies.Glide.glideCompiler)
+    implementation(Dependencies.Glide.glide)
 }

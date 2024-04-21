@@ -17,12 +17,14 @@ import uz.otamurod.presentation.ui.base.BaseViewModel
 import uz.otamurod.presentation.utils.helper.CurrentLocationTracker
 import uz.otamurod.presentation.utils.network.NetworkStatusListener
 import uz.otamurod.presentation.utils.network.isNetworkConnected
+import uz.otamurod.specs.buildconfig.WeatherBuildConfigApi
 import javax.inject.Inject
 
 @HiltViewModel
 class WelcomeViewModel @Inject constructor(
     private val permissionRequester: PermissionRequester,
-    private val lastLocationInteractorApi: LastLocationInteractorApi
+    private val lastLocationInteractorApi: LastLocationInteractorApi,
+    private val weatherBuildConfigApi: WeatherBuildConfigApi
 ) : BaseViewModel() {
     private val context: LiveData<Context> by lazy { MutableLiveData() }
     private lateinit var currentLocationTracker: CurrentLocationTracker
@@ -34,9 +36,11 @@ class WelcomeViewModel @Inject constructor(
     val shouldShowGpsEnablePrompt: LiveData<Boolean> by lazy { MutableLiveData() }
     val shouldShowTurnOnNetworkPrompt: LiveData<Boolean> by lazy { MutableLiveData() }
     val shouldShowGrantPermissionPrompt: LiveData<Boolean> by lazy { MutableLiveData() }
+    val appVersionName: LiveData<String> by lazy { MutableLiveData() }
 
     init {
         requestLocationPermission()
+        retrieveAppVersionName()
     }
 
     fun requestLocationPermission() = viewModelScope.launch {
@@ -135,13 +139,12 @@ class WelcomeViewModel @Inject constructor(
             val lastAccessedLocation = lastLocationInteractorApi.getDeviceLocation()
             if (lastAccessedLocation != null) {
                 withContext(Dispatchers.Main) {
-                    updateLastLocationAccessResult(lastAccessedLocation, true)
-
                     updatePromptFlags(
                         showGrantPermissionPrompt = false,
                         showGpsEnablePrompt = false,
                         showTurnOnNetworkPrompt = false
                     )
+                    updateLastLocationAccessResult(lastAccessedLocation, true)
                 }
             } else {
                 withContext(Dispatchers.Main) {
@@ -174,6 +177,11 @@ class WelcomeViewModel @Inject constructor(
                     if (updatedLastLocation != null) {
                         lastLocationInteractorApi.updateDeviceLocation(updatedLastLocation)
                         withContext(Dispatchers.Main) {
+                            updatePromptFlags(
+                                showGrantPermissionPrompt = false,
+                                showGpsEnablePrompt = false,
+                                showTurnOnNetworkPrompt = false
+                            )
                             updateLastLocationAccessResult(updatedLastLocation, true)
                         }
                     } else {
@@ -201,6 +209,12 @@ class WelcomeViewModel @Inject constructor(
                     showTurnOnNetworkPrompt = false
                 )
             }
+        }
+    }
+
+    private fun retrieveAppVersionName() {
+        viewModelScope.launch {
+            appVersionName.setValue(weatherBuildConfigApi.buildVersion)
         }
     }
 
