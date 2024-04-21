@@ -24,8 +24,8 @@ object Dependencies {
         const val splashScreen = "androidx.core:core-splashscreen:$splashScreenVersion"
 
         object Navigation {
-            private const val navigationVersion = "2.7.2"
-            private const val safeArgsGradleVersion = "2.7.2"
+            private const val navigationVersion = "2.7.7"
+            private const val safeArgsGradleVersion = "2.7.7"
             const val fragmentKtx = "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
             const val uiKtx = "androidx.navigation:navigation-ui-ktx:$navigationVersion"
             const val safeArgsGradlePlugin =
@@ -137,5 +137,11 @@ object Dependencies {
         const val places = "com.google.android.libraries.places:places:$placesVersion"
         const val mapsServices = "com.google.maps:google-maps-services:$mapsServicesVersion"
         const val mapsUtils = "com.google.maps.android:android-maps-utils:$mapsUtilsVersion"
+    }
+
+    object Glide {
+        const val glideVersion = "4.16.0"
+        const val glideCompiler = "com.github.bumptech.glide:ksp:$glideVersion" // replaced with ksp
+        const val glide = "com.github.bumptech.glide:glide:$glideVersion"
     }
 }

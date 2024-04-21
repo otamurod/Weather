@@ -9,7 +9,7 @@ class LastLocationInteractor @Inject constructor(
     private val weatherLocalRepositoryApi: WeatherLocalRepositoryApi
 ) : LastLocationInteractorApi {
 
-    override suspend fun getDeviceLocation(): LastLocation {
+    override suspend fun getDeviceLocation(): LastLocation? {
         return weatherLocalRepositoryApi.getDeviceLocation()
     }
 

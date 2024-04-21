@@ -14,8 +14,13 @@ class WeatherLocalRepository @Inject constructor(
     private val weatherDatabaseDataSource: WeatherDatabaseDataSource
 ) : WeatherLocalRepositoryApi {
 
-    override suspend fun getDeviceLocation(): LastLocation {
-        return LastLocationDbMapper.fromDto(weatherDatabaseDataSource.getLastLocation())
+    override suspend fun getDeviceLocation(): LastLocation? {
+        val lastLocationEntity = weatherDatabaseDataSource.getLastLocation()
+        return if (lastLocationEntity != null) {
+            LastLocationDbMapper.fromDto(lastLocationEntity)
+        } else {
+            null
+        }
     }
 
     override suspend fun getSearchedPlaceById(id: Int): Place {

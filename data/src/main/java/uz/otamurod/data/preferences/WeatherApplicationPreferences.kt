@@ -9,8 +9,7 @@ class WeatherApplicationPreferences(
     sharedPreferencesName: String
 ) : WeatherApplicationPreferencesApi {
     private val preferences = context.getSharedPreferences(
-        sharedPreferencesName,
-        Context.MODE_PRIVATE
+        sharedPreferencesName, Context.MODE_PRIVATE
     )
 
     override var isDarkThemeEnabled: Boolean

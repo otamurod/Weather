@@ -4,7 +4,7 @@ import uz.otamurod.domain.model.LastLocation
 
 interface LastLocationInteractorApi {
 
-    suspend fun getDeviceLocation(): LastLocation
+    suspend fun getDeviceLocation(): LastLocation?
 
     suspend fun insertDeviceLocation(lastLocation: LastLocation)
 

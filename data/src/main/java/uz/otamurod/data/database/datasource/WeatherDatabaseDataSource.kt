@@ -23,7 +23,7 @@ class WeatherDatabaseDataSource @Inject constructor(
     suspend fun insertLastLocation(lastLocation: LastLocationEntity) =
         lastLocationDao.insertLastLocation(lastLocation)
 
-    suspend fun getLastLocation(): LastLocationEntity = lastLocationDao.getLastLocation()
+    suspend fun getLastLocation(): LastLocationEntity? = lastLocationDao.getLastLocation()
 
     suspend fun updateLastLocation(lastLocation: LastLocationEntity) =
         lastLocationDao.updateLastLocation(lastLocation)

@@ -4,7 +4,6 @@ import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 import uz.otamurod.data.network.entities.location.LocationSearchResponse
-import uz.otamurod.domain.util.DataState
 
 interface GeoCodingApiService {
 
@@ -16,6 +15,6 @@ interface GeoCodingApiService {
         @Query("count") count: Int = 10,
         @Query("language") language: String,
         @Query("format") format: String = "json"
-    ): Response<DataState<LocationSearchResponse>>
+    ): Response<LocationSearchResponse>
 
 }

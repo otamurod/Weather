@@ -11,14 +11,18 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
+import uz.otamurod.domain.preferences.WeatherApplicationPreferencesApi
 import uz.otamurod.presentation.arch.delegate.LifecycleDelegate
 import uz.otamurod.presentation.arch.delegate.LifecycleDelegateOwner
 import uz.otamurod.presentation.arch.viewbinding.BindingFactory
 import uz.otamurod.presentation.arch.viewbinding.NestedInflater
 import uz.otamurod.presentation.arch.viewbinding.ViewBindingDelegate
 import uz.otamurod.presentation.arch.viewbinding.terminalInflater
+import javax.inject.Inject
 
 abstract class BaseFragment : Fragment(), NestedInflater, LifecycleDelegateOwner {
+    @Inject
+    lateinit var preferences: WeatherApplicationPreferencesApi
 
     private val lifecycleDelegateController = LifecycleDelegate.Controller(
         object : LifecycleDelegate.ContextProvider {

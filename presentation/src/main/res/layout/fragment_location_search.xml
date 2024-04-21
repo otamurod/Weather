@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/location_search_screen_bg"
+    tools:context=".ui.location_search.LocationSearchFragment">
+
+    <TextView
+        android:id="@+id/pickLocationTextView"
+        style="@style/Widget.NextSevenDays.TextView.TextAppearance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/pick_location"
+        android:textColor="@color/current_is_day_text_color"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@id/horizontalGuideline6"
+        app:layout_constraintEnd_toEndOf="@id/verticalGuideline92"
+        app:layout_constraintStart_toStartOf="@id/verticalGuideline8"
+        app:layout_constraintTop_toTopOf="@id/horizontalGuideline6" />
+
+    <TextView
+        android:id="@+id/pickLocationGuideTextView"
+        style="@style/Widget.IsDay.TextView.TextAppearance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:background="#4000"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="@string/pick_location_guide"
+        android:textColor="@color/material_yellow_400"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="@id/pickLocationTextView"
+        app:layout_constraintStart_toStartOf="@id/pickLocationTextView"
+        app:layout_constraintTop_toBottomOf="@id/pickLocationTextView" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/material_light_blue_500"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/locationSearchView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pickLocationGuideTextView" />
+
+    <TextView
+        android:id="@+id/networkConnectionAlert"
+        style="@style/Widget.CurrentWeatherCode.TextView.TextAppearance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:background="@drawable/current_weather_probabilities_bg"
+        android:backgroundTint="@color/material_red_500"
+        android:elevation="8dp"
+        android:paddingStart="24dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="2dp"
+        android:text="@string/network_connection_unavailable"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/progressBar"
+        app:layout_constraintEnd_toEndOf="@id/progressBar"
+        app:layout_constraintStart_toStartOf="@id/progressBar"
+        app:layout_constraintTop_toTopOf="@id/progressBar" />
+
+    <SearchView
+        android:id="@+id/locationSearchView"
+        style="@style/Widget.CurrentApparentTemperature.TextView.TextAppearance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/current_weather_probabilities_bg"
+        android:elevation="6dp"
+        android:gravity="center_vertical"
+        android:iconifiedByDefault="false"
+        android:queryHint="@string/search_hint"
+        android:searchIcon="@drawable/ic_search_location"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/pickLocationGuideTextView"
+        app:layout_constraintStart_toStartOf="@id/pickLocationGuideTextView"
+        app:layout_constraintTop_toBottomOf="@id/pickLocationGuideTextView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/locationSearchResultsRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/search_location_rv_bg"
+        android:elevation="3dp"
+        android:orientation="vertical"
+        android:paddingTop="40dp"
+        android:paddingBottom="32dp"
+        android:visibility="visible"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="@id/horizontalGuideline75"
+        app:layout_constraintEnd_toEndOf="@id/verticalGuideline92"
+        app:layout_constraintStart_toStartOf="@id/verticalGuideline8"
+        app:layout_constraintTop_toTopOf="@id/locationSearchView"
+        tools:listitem="@layout/location_search_results_rv_item" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchedLocationsRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="@id/horizontalGuideline96"
+        app:layout_constraintEnd_toEndOf="@id/verticalGuideline92"
+        app:layout_constraintStart_toStartOf="@id/verticalGuideline8"
+        app:layout_constraintTop_toBottomOf="@id/locationSearchView"
+        tools:listitem="@layout/searched_locations_rv_item" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verticalGuideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verticalGuideline92"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.92" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalGuideline75"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalGuideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.06" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalGuideline96"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.96" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

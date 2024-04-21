@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/current_weather_screen_bg"
+    tools:context=".ui.current_weather.CurrentWeatherFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/filterIconCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="50dp"
+                app:cardElevation="6dp"
+                app:cardMaxElevation="8dp"
+                app:layout_constraintStart_toStartOf="@id/verticalGuideline8"
+                app:layout_constraintTop_toTopOf="@id/horizontalGuideline6">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lottieFilterAnimation"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@color/filter_icon_background_color"
+                    android:padding="8dp"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:lottie_autoPlay="true"
+                    app:lottie_fileName="icon_filter.json"
+                    app:lottie_loop="true" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/goToSearchLocation"
+                style="@style/Widget.CurrentApparentTemperature.TextView.TextAppearance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:background="@drawable/current_weather_probabilities_bg"
+                android:drawableStart="@drawable/ic_search_location"
+                android:drawablePadding="16sp"
+                android:elevation="6dp"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="@string/search_hint"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="@id/filterIconCard"
+                app:layout_constraintEnd_toEndOf="@id/verticalGuideline92"
+                app:layout_constraintStart_toEndOf="@id/filterIconCard"
+                app:layout_constraintTop_toTopOf="@id/filterIconCard"
+                tools:ignore="UseCompatTextViewDrawableXml" />
+
+            <TextView
+                android:id="@+id/addressNameTextView"
+                style="@style/Widget.Today.TextView.TextAppearance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="16dp"
+                android:maxLines="1"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@id/currentDayAndDateTextView"
+                app:layout_constraintEnd_toStartOf="@id/currentLocationIconCard"
+                app:layout_constraintStart_toStartOf="@id/verticalGuideline8"
+                app:layout_constraintTop_toTopOf="@id/currentLocationIconCard"
+                tools:text="@string/address_name_sample" />
+
+            <TextView
+                android:id="@+id/currentDayAndDateTextView"
+                style="@style/Widget.IsDay.TextView.TextAppearance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/current_apparent_temperature_text_color"
+                app:layout_constraintBottom_toBottomOf="@id/currentLocationIconCard"
+                app:layout_constraintEnd_toEndOf="@id/addressNameTextView"
+                app:layout_constraintStart_toStartOf="@id/addressNameTextView"
+                app:layout_constraintTop_toBottomOf="@id/addressNameTextView"
+                tools:text="@string/day_and_date_sample" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/currentLocationIconCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:cardMaxElevation="12dp"
+                app:layout_constraintEnd_toEndOf="@id/verticalGuideline92"
+                app:layout_constraintTop_toBottomOf="@id/filterIconCard">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lottieCurrentLocationAnimation"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:padding="8dp"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:lottie_autoPlay="true"
+                    app:lottie_fileName="current_location.json"
+                    app:lottie_loop="true" />
+
+            </androidx.cardview.widget.CardView>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottieCurrentWeatherCodeAnimation"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="-32dp"
+                android:elevation="16dp"
+                android:padding="8dp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="@id/currentWeatherCard"
+                app:layout_constraintTop_toTopOf="@id/currentWeatherCard"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="clear_sky.json"
+                app:lottie_loop="true" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/currentWeatherCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="10dp"
+                app:cardMaxElevation="12dp"
+                app:cardUseCompatPadding="false"
+                app:layout_constraintBottom_toBottomOf="@id/horizontalGuideline50"
+                app:layout_constraintEnd_toEndOf="@id/verticalGuideline92"
+                app:layout_constraintStart_toStartOf="@id/verticalGuideline8">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/current_weather_card_bg"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/currentWeatherCodeTextView"
+                        style="@style/Widget.CurrentWeatherCode.TextView.TextAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toTopOf="@id/isDayTextView"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/currentApparentTemperatureTextView"
+                        tools:text="@string/heavy_rain" />
+
+                    <TextView
+                        android:id="@+id/isDayTextView"
+                        style="@style/Widget.IsDay.TextView.TextAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:text="@string/is_day_sample" />
+
+                    <TextView
+                        android:id="@+id/currentTemperatureTextView"
+                        style="@style/Widget.CurrentTemperature.TextView.TextAppearance"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toTopOf="@id/currentApparentTemperatureTextView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/currentApparentTemperatureTextView"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="@string/current_temperature_sample" />
+
+                    <TextView
+                        android:id="@+id/currentApparentTemperatureTextView"
+                        style="@style/Widget.CurrentApparentTemperature.TextView.TextAppearance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/currentTemperatureTextView"
+                        tools:text="@string/current_apparent_temperature_sample" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="48dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="4dp"
+                        android:elevation="4dp"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/currentApparentTemperatureTextView"
+                        app:layout_constraintStart_toEndOf="@id/currentWeatherCodeTextView"
+                        app:layout_constraintTop_toBottomOf="@id/currentApparentTemperatureTextView"
+                        app:lottie_autoPlay="true"
+                        app:lottie_fileName="wind_speed.json"
+                        app:lottie_loop="true" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/currentWeatherProbabilitiesLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@id/verticalGuideline92"
+                app:layout_constraintStart_toStartOf="@id/verticalGuideline8"
+                app:layout_constraintTop_toBottomOf="@id/horizontalGuideline50">
+
+                <LinearLayout
+                    android:id="@+id/precipitationProbabilityLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/windSpeedLayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/current_weather_probabilities_bg"
+                        android:elevation="4dp"
+                        app:lottie_autoPlay="true"
+                        app:lottie_fileName="precipitation.json"
+                        app:lottie_loop="true" />
+
+                    <TextView
+                        android:id="@+id/precipitationProbabilityTextView"
+                        style="@style/Widget.CurrentWeatherProbabilities.TextView.TextAppearance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="@string/precipitation_probability_sample" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/windSpeedLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="@+id/precipitationProbabilityLayout"
+                    app:layout_constraintEnd_toStartOf="@+id/rainSumLayout"
+                    app:layout_constraintStart_toEndOf="@+id/precipitationProbabilityLayout"
+                    app:layout_constraintTop_toTopOf="@+id/precipitationProbabilityLayout">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/current_weather_probabilities_bg"
+                        android:elevation="4dp"
+                        app:lottie_autoPlay="true"
+                        app:lottie_fileName="wind_speed.json"
+                        app:lottie_loop="true" />
+
+                    <TextView
+                        android:id="@+id/windSpeedTextView"
+                        style="@style/Widget.CurrentWeatherProbabilities.TextView.TextAppearance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="@string/wind_speed_sample" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/rainSumLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="@id/windSpeedLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/windSpeedLayout"
+                    app:layout_constraintTop_toTopOf="@id/windSpeedLayout">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/current_weather_probabilities_bg"
+                        android:elevation="4dp"
+                        app:lottie_autoPlay="true"
+                        app:lottie_fileName="light_drizzle.json"
+                        app:lottie_loop="true" />
+
+                    <TextView
+                        android:id="@+id/rainSumTextView"
+                        style="@style/Widget.CurrentWeatherProbabilities.TextView.TextAppearance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="@string/rain_sum_sample" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/turnOnNetworkPromptLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/network_prompt_layout_bg"
+                android:elevation="6dp"
+                android:padding="12dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/currentWeatherProbabilitiesLayout"
+                app:layout_constraintEnd_toEndOf="@id/currentWeatherProbabilitiesLayout"
+                app:layout_constraintStart_toStartOf="@id/currentWeatherProbabilitiesLayout"
+                app:layout_constraintTop_toTopOf="@+id/currentWeatherProbabilitiesLayout">
+
+                <ImageView
+                    android:id="@+id/networkUnavailableIcon"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:src="@drawable/ic_network_unavailable"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/turnOnNetworkPromptTextView"
+                    style="@style/Widget.WelcomeUserPrompt.TextView.TextAppearance"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/turn_on_network_prompt"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/networkUnavailableIcon"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/todayLabel"
+                style="@style/Widget.Today.TextView.TextAppearance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/today"
+                app:layout_constraintStart_toStartOf="@id/verticalGuideline8"
+                app:layout_constraintTop_toBottomOf="@id/currentWeatherProbabilitiesLayout" />
+
+            <TextView
+                android:id="@+id/nextSevenDaysTextView"
+                style="@style/Widget.NextSevenDays.TextView.TextAppearance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_arrow_forward"
+                android:text="@string/next_7_days"
+                app:layout_constraintBottom_toBottomOf="@id/todayLabel"
+                app:layout_constraintEnd_toEndOf="@id/verticalGuideline92"
+                app:layout_constraintTop_toTopOf="@id/todayLabel"
+                tools:ignore="UseCompatTextViewDrawableXml" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/hourlyWeatherRecyclerView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:background="@drawable/network_prompt_layout_bg"
+                android:orientation="horizontal"
+                android:paddingStart="8dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="12dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toTopOf="@id/sunriseSunsetGif"
+                app:layout_constraintEnd_toEndOf="@id/verticalGuideline92"
+                app:layout_constraintStart_toStartOf="@id/verticalGuideline8"
+                app:layout_constraintTop_toBottomOf="@id/todayLabel"
+                tools:listitem="@layout/hourly_weather_rv_item" />
+
+            <ImageView
+                android:id="@+id/sunriseSunsetGif"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/sunrise_sunset"
+                app:layout_constraintBottom_toBottomOf="@id/horizontalGuideline96"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="@id/verticalGuideline92"
+                app:layout_constraintStart_toStartOf="@id/verticalGuideline8"
+                app:layout_constraintTop_toBottomOf="@id/hourlyWeatherRecyclerView" />
+
+            <TextView
+                android:id="@+id/sunriseTimeTextView"
+                style="@style/Widget.NextSevenDays.TextView.TextAppearance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:textColor="@color/current_weather_card_bg_gradient_end_color"
+                app:layout_constraintBottom_toTopOf="@id/sunsetTimeTextView"
+                app:layout_constraintEnd_toEndOf="@id/sunriseSunsetGif"
+                app:layout_constraintStart_toStartOf="@id/sunriseSunsetGif"
+                app:layout_constraintTop_toTopOf="@id/sunriseSunsetGif"
+                tools:text="@string/hour_time_sample" />
+
+            <TextView
+                android:id="@+id/sunsetTimeTextView"
+                style="@style/Widget.NextSevenDays.TextView.TextAppearance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:textColor="@color/current_weather_card_bg_gradient_end_color"
+                app:layout_constraintBottom_toBottomOf="@id/sunriseSunsetGif"
+                app:layout_constraintEnd_toEndOf="@id/sunriseSunsetGif"
+                app:layout_constraintStart_toStartOf="@id/sunriseSunsetGif"
+                app:layout_constraintTop_toBottomOf="@id/sunriseTimeTextView"
+                tools:text="@string/hour_time_sample" />
+
+            <TextView
+                android:id="@+id/networkConnectionAlert"
+                style="@style/Widget.CurrentWeatherCode.TextView.TextAppearance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/current_weather_probabilities_bg"
+                android:backgroundTint="@color/material_red_500"
+                android:elevation="8dp"
+                android:paddingStart="24dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="24dp"
+                android:paddingBottom="6dp"
+                android:text="@string/network_connection_unavailable"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/currentWeatherProbabilitiesLayout"
+                app:layout_constraintEnd_toEndOf="@id/verticalGuideline92"
+                app:layout_constraintStart_toStartOf="@id/verticalGuideline8" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/verticalGuideline8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.08" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/verticalGuideline92"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.92" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/horizontalGuideline50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="360dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/horizontalGuideline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="50dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/horizontalGuideline96"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="32dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

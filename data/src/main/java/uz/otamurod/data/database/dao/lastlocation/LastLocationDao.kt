@@ -8,8 +8,8 @@ interface LastLocationDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertLastLocation(lastLocation: LastLocationEntity)
 
-    @Query("SELECT * FROM ${LastLocationEntity.TABLE_NAME} ORDER BY ${LastLocationEntity.ID} ASC LIMIT 1")
-    suspend fun getLastLocation(): LastLocationEntity
+    @Query("SELECT * FROM ${LastLocationEntity.TABLE_NAME} ORDER BY ${LastLocationEntity.ID} DESC LIMIT 1")
+    suspend fun getLastLocation(): LastLocationEntity?
 
     @Update
     suspend fun updateLastLocation(lastLocation: LastLocationEntity)
