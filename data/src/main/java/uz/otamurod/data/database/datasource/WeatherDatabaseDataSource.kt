@@ -20,13 +20,11 @@ class WeatherDatabaseDataSource @Inject constructor(
     private val forecastDao: ForecastDao
 ) {
     // Device Location
-    suspend fun insertLastLocation(lastLocation: LastLocationEntity) =
-        lastLocationDao.insertLastLocation(lastLocation)
+
+    suspend fun saveLastLocation(lastLocation: LastLocationEntity) =
+        lastLocationDao.saveLastLocation(lastLocation)
 
     suspend fun getLastLocation(): LastLocationEntity? = lastLocationDao.getLastLocation()
-
-    suspend fun updateLastLocation(lastLocation: LastLocationEntity) =
-        lastLocationDao.updateLastLocation(lastLocation)
 
     // Searched Location
     suspend fun insertPlace(place: PlaceEntity) = placeDao.insertPlace(place)

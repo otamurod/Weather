@@ -6,7 +6,5 @@ interface LastLocationInteractorApi {
 
     suspend fun getDeviceLocation(): LastLocation?
 
-    suspend fun insertDeviceLocation(lastLocation: LastLocation)
-
-    suspend fun updateDeviceLocation(lastLocation: LastLocation)
+    suspend fun saveDeviceLocation(lastLocation: LastLocation)
 }

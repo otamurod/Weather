@@ -83,8 +83,8 @@ class WeatherLocalRepository @Inject constructor(
         }
     }
 
-    override suspend fun insertDeviceLocation(lastLocation: LastLocation) {
-        weatherDatabaseDataSource.insertLastLocation(LastLocationDbMapper.fromBusiness(lastLocation))
+    override suspend fun saveDeviceLocation(lastLocation: LastLocation) {
+        weatherDatabaseDataSource.saveLastLocation(LastLocationDbMapper.fromBusiness(lastLocation))
     }
 
     override suspend fun insertSearchedPlace(place: Place) {
@@ -93,10 +93,6 @@ class WeatherLocalRepository @Inject constructor(
 
     override suspend fun insertForecastOfPlace(forecast: Forecast) {
         weatherDatabaseDataSource.insertForecast(ForecastDbMapper.fromBusiness(forecast))
-    }
-
-    override suspend fun updateDeviceLocation(lastLocation: LastLocation) {
-        weatherDatabaseDataSource.updateLastLocation(LastLocationDbMapper.fromBusiness(lastLocation))
     }
 
     override suspend fun deleteSearchedPlaceById(id: Int) {

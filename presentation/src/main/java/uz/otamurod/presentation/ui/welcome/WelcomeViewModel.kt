@@ -175,7 +175,7 @@ class WelcomeViewModel @Inject constructor(
                     )
 
                     if (updatedLastLocation != null) {
-                        lastLocationInteractorApi.updateDeviceLocation(updatedLastLocation)
+                        lastLocationInteractorApi.saveDeviceLocation(updatedLastLocation)
                         withContext(Dispatchers.Main) {
                             updatePromptFlags(
                                 showGrantPermissionPrompt = false,
@@ -193,7 +193,7 @@ class WelcomeViewModel @Inject constructor(
                     val lastLocation =
                         LastLocation(0, location.latitude, location.longitude, addressName)
 
-                    lastLocationInteractorApi.insertDeviceLocation(lastLocation)
+                    lastLocationInteractorApi.saveDeviceLocation(lastLocation)
                     withContext(Dispatchers.Main) {
                         updateLastLocationAccessResult(lastLocation, true)
                     }

@@ -13,11 +13,7 @@ class LastLocationInteractor @Inject constructor(
         return weatherLocalRepositoryApi.getDeviceLocation()
     }
 
-    override suspend fun insertDeviceLocation(lastLocation: LastLocation) {
-        return weatherLocalRepositoryApi.insertDeviceLocation(lastLocation)
-    }
-
-    override suspend fun updateDeviceLocation(lastLocation: LastLocation) {
-        return weatherLocalRepositoryApi.updateDeviceLocation(lastLocation)
+    override suspend fun saveDeviceLocation(lastLocation: LastLocation) {
+        return weatherLocalRepositoryApi.saveDeviceLocation(lastLocation)
     }
 }

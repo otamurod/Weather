@@ -25,20 +25,13 @@ interface WeatherLocalRepositoryApi {
      */
 
     // Device Location
-    suspend fun insertDeviceLocation(lastLocation: LastLocation)
+    suspend fun saveDeviceLocation(lastLocation: LastLocation)
 
     // Searched Location
     suspend fun insertSearchedPlace(place: Place)
 
     // Weather
     suspend fun insertForecastOfPlace(forecast: Forecast)
-
-    /**
-     * Update Database
-     */
-
-    // Device Location
-    suspend fun updateDeviceLocation(lastLocation: LastLocation)
 
     /**
      * Clean Database
