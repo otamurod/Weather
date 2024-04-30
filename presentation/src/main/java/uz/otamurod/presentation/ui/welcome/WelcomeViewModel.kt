@@ -13,6 +13,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import uz.otamurod.domain.interactor.LastLocationInteractorApi
 import uz.otamurod.domain.model.LastLocation
+import uz.otamurod.domain.preferences.WeatherApplicationPreferencesApi
 import uz.otamurod.presentation.ui.base.BaseViewModel
 import uz.otamurod.presentation.utils.helper.CurrentLocationTracker
 import uz.otamurod.presentation.utils.network.NetworkStatusListener
@@ -83,8 +84,12 @@ class WelcomeViewModel @Inject constructor(
         }
     }
 
-    suspend fun setContext(context: Context, networkStatusListener: NetworkStatusListener?) {
-        currentLocationTracker = CurrentLocationTracker(context)
+    suspend fun setContext(
+        context: Context,
+        networkStatusListener: NetworkStatusListener?,
+        preferences: WeatherApplicationPreferencesApi
+    ) {
+        currentLocationTracker = CurrentLocationTracker(context, preferences)
         this.context.postValue(context)
 
         if (isNetworkConnected(context, networkStatusListener)) {
@@ -92,6 +97,7 @@ class WelcomeViewModel @Inject constructor(
                 isNetworkConnected.setValue(true)
             }
         } else {
+            accessLastLocation()
             withContext(Dispatchers.Main) {
                 isNetworkConnected.setValue(false)
             }
@@ -161,45 +167,60 @@ class WelcomeViewModel @Inject constructor(
     }
 
     private suspend fun accessAndUpdateLastLocation() {
+        // This is the device's real-time location
         val location = currentLocationTracker.getLocation()
+
+        // This is the device location that is stored into Database
+        // When the last real-time location is accessed
+        val lastAccessedLocation = lastLocationInteractorApi.getDeviceLocation()
+
+        // Check if the last known location is retrieved from Location Provider
         if (location != null) {
-            val addressName =
-                currentLocationTracker.getAddressName(location.latitude, location.longitude)
+            // Case 1: SUCCESS
+            viewModelScope.launch(Dispatchers.IO) {
+                val addressName =
+                    currentLocationTracker.getAddressName(location.latitude, location.longitude)
 
-            if (lastLocation.value != null && isLastLocationAccessed.value != null && isLastLocationAccessed.value == true) {
-                viewModelScope.launch(Dispatchers.IO) {
-                    val updatedLastLocation = lastLocation.value?.copy(
-                        latitude = location.latitude,
-                        longitude = location.longitude,
-                        addressName = addressName
-                    )
+                // Create a Business Object
+                val lastLocation = LastLocation(
+                    id = 0, // We can use a unique id for LastLocation since a device can have only last known location
+                    latitude = location.latitude,
+                    longitude = location.longitude,
+                    addressName = addressName,
+                    // Initially use the same [latitude] & [longitude] for corresponding forecast info
+                    // We are using this due to the Lat & Long of a Location and the Lat & Long of its corresponding Weather Forecast differs
+                    correspondingForecastLat = location.latitude,
+                    correspondingForecastLong = location.longitude
+                )
 
-                    if (updatedLastLocation != null) {
-                        lastLocationInteractorApi.saveDeviceLocation(updatedLastLocation)
-                        withContext(Dispatchers.Main) {
-                            updatePromptFlags(
-                                showGrantPermissionPrompt = false,
-                                showGpsEnablePrompt = false,
-                                showTurnOnNetworkPrompt = false
-                            )
-                            updateLastLocationAccessResult(updatedLastLocation, true)
-                        }
-                    } else {
-                        updateLastLocationAccessResult(null, false)
-                    }
+                // Check if a user have weather forecast of the last known location
+                // In case of the user has forecast data locally, we can use corresponding lat & long fields
+                // So that we can retrieve the weather data from Database by simply passing the lat & long in [CurrentWeatherFragment]
+                if (lastAccessedLocation != null &&
+                    // We can also calculate the distance between the two locations
+                    // And we can set an interval of difference to avoid unnecessary API calls
+                    // Because the weather forecast of a place will be the same as its points covered in its territory
+                    // For example, 0 to 2km distance
+                    lastAccessedLocation.latitude == lastLocation.latitude &&
+                    lastAccessedLocation.longitude == lastLocation.longitude
+                ) {
+                    lastLocation.correspondingForecastLat =
+                        lastAccessedLocation.correspondingForecastLat
+                    lastLocation.correspondingForecastLong =
+                        lastAccessedLocation.correspondingForecastLong
                 }
-            } else {
-                viewModelScope.launch(Dispatchers.IO) {
-                    val lastLocation =
-                        LastLocation(0, location.latitude, location.longitude, addressName)
-
-                    lastLocationInteractorApi.saveDeviceLocation(lastLocation)
-                    withContext(Dispatchers.Main) {
-                        updateLastLocationAccessResult(lastLocation, true)
-                    }
+                lastLocationInteractorApi.saveDeviceLocation(lastLocation)
+                withContext(Dispatchers.Main) {
+                    updatePromptFlags(
+                        showGrantPermissionPrompt = false,
+                        showGpsEnablePrompt = false,
+                        showTurnOnNetworkPrompt = false
+                    )
+                    updateLastLocationAccessResult(lastLocation, true)
                 }
             }
         } else {
+            // Case 2: FAILED
             withContext(Dispatchers.Main) {
                 updateLastLocationAccessResult(null, false)
 

@@ -12,6 +12,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import uz.otamurod.domain.api.model.location.LocationSearch
 import uz.otamurod.domain.api.model.location.Place
+import uz.otamurod.domain.interactor.ForecastInteractorApi
 import uz.otamurod.domain.interactor.LocationSearchInteractorApi
 import uz.otamurod.domain.util.DataState
 import uz.otamurod.presentation.ui.base.BaseViewModel
@@ -21,12 +22,14 @@ import javax.inject.Inject
 
 @HiltViewModel
 class LocationSearchViewModel @Inject constructor(
-    private val locationSearchInteractorApi: LocationSearchInteractorApi
+    private val locationSearchInteractorApi: LocationSearchInteractorApi,
+    private val forecastInteractorApi: ForecastInteractorApi
 ) : BaseViewModel() {
     private val context: LiveData<Context> by lazy { MutableLiveData() }
 
     val isNetworkConnected: LiveData<Boolean> by lazy { MutableLiveData() }
     val dataState: LiveData<DataState<LocationSearch>> by lazy { MutableLiveData() }
+    val isProcessing: LiveData<Boolean> by lazy { MutableLiveData() }
     val locationSearchResult: LiveData<LocationSearch> by lazy { MutableLiveData() }
     val searchedPlaces: LiveData<List<Place>> by lazy { MutableLiveData() }
 
@@ -70,29 +73,44 @@ class LocationSearchViewModel @Inject constructor(
     }
 
     private suspend fun getAllSearchedPlaces() {
-        viewModelScope.launch(Dispatchers.IO) {
-            val allSearchedPlaces = locationSearchInteractorApi.getAllSearchedPlaces()
-            Log.d(TAG, "getAllSearchedPlaces: $allSearchedPlaces")
-            if (allSearchedPlaces.isNotEmpty()) {
-                withContext(Dispatchers.Main) {
-                    searchedPlaces.setValue(allSearchedPlaces)
-                }
+        val allSearchedPlaces = locationSearchInteractorApi.getAllSearchedPlaces()
+        Log.d(TAG, "getAllSearchedPlaces: $allSearchedPlaces")
+        if (allSearchedPlaces.isNotEmpty()) {
+            withContext(Dispatchers.Main) {
+                searchedPlaces.setValue(allSearchedPlaces)
+                isProcessing.setValue(false)
+            }
+        } else {
+            withContext(Dispatchers.Main) {
+                searchedPlaces.setValue(emptyList())
+                isProcessing.setValue(false)
             }
         }
     }
 
-    suspend fun insertSearchedPlace(place: Place) {
+    suspend fun saveSearchedPlace(place: Place) {
+        withContext(Dispatchers.Main) {
+            isProcessing.setValue(true)
+        }
         viewModelScope.launch(Dispatchers.IO) {
-            if ((searchedPlaces.value != null && !searchedPlaces.value!!.contains(place) || searchedPlaces.value == null)) {
-                locationSearchInteractorApi.insertSearchedPlace(place)
-            }
+            locationSearchInteractorApi.saveSearchedPlace(place)
+
             getAllSearchedPlaces()
         }
     }
 
-    suspend fun deleteSearchedPlaceById(id: Int) {
+    suspend fun deleteSearchedPlaceById(place: Place) {
+        isProcessing.setValue(true)
         viewModelScope.launch(Dispatchers.IO) {
-            locationSearchInteractorApi.deleteSearchedPlaceById(id)
+            locationSearchInteractorApi.deleteSearchedPlaceById(place.id)
+            // We must delete corresponding weather forecast too
+            forecastInteractorApi.deleteForecast(
+                place.correspondingForecastLat,
+                place.correspondingForecastLong
+            )
+            withContext(Dispatchers.Main) {
+                isProcessing.setValue(false)
+            }
             getAllSearchedPlaces()
         }
     }

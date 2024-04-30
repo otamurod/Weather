@@ -1,11 +1,14 @@
 package uz.otamurod.data.interactor
 
-import kotlinx.coroutines.flow.Flow
+import android.util.Log
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.*
 import uz.otamurod.domain.api.model.weather.Forecast
 import uz.otamurod.domain.api.repository.OpenMeteoRemoteRepositoryApi
 import uz.otamurod.domain.api.repository.WeatherLocalRepositoryApi
 import uz.otamurod.domain.interactor.ForecastInteractorApi
 import uz.otamurod.domain.util.DataState
+import java.io.IOException
 import javax.inject.Inject
 
 class ForecastInteractor @Inject constructor(
@@ -14,19 +17,33 @@ class ForecastInteractor @Inject constructor(
 ) : ForecastInteractorApi {
     override suspend fun getForecast(
         latitude: Double,
-        longitude: Double
-    ): Flow<DataState<Forecast>> {
-        return openMeteoRemoteRepositoryApi.getForecast(latitude, longitude)
+        longitude: Double,
+        shouldUpdateLastLocation: Boolean
+    ): Flow<DataState<Forecast>> = channelFlow {
+        openMeteoRemoteRepositoryApi.getForecast(latitude, longitude, shouldUpdateLastLocation)
+            .retryWhen { cause, _ ->
+                if (cause is IOException) {
+                    send(DataState.Error(cause.message.toString()))
+                    Log.d(TAG, "getForecast: IOException")
+                    delay(RETRY_TIME_IN_MILLIS)
+                    true
+                } else {
+                    false
+                }
+            }.catch {
+                send(DataState.Error(it.message.toString()))
+            }.collectLatest {
+                Log.d(TAG, "getForecast: forecast = ${it.data}")
+                send(DataState.Success(it.data!!))
+            }
     }
 
-    override suspend fun getForecastOfPlaceByLatLong(
-        latitude: Double,
-        longitude: Double
-    ): Forecast? {
-        return weatherLocalRepositoryApi.getForecastOfPlaceByLatLong(latitude, longitude)
+    override suspend fun deleteForecast(latitude: Double, longitude: Double) {
+        weatherLocalRepositoryApi.deleteForecast(latitude, longitude)
     }
 
-    override suspend fun insertForecastOfPlace(forecast: Forecast) {
-        return weatherLocalRepositoryApi.insertForecastOfPlace(forecast)
+    companion object {
+        private const val TAG = "ForecastInteractor"
+        private const val RETRY_TIME_IN_MILLIS = 15_000L
     }
 }

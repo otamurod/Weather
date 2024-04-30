@@ -1,16 +1,16 @@
 package uz.otamurod.data.database.dao.weather
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import uz.otamurod.data.database.entity.weather.DailyUnitsEntity
 
 @Dao
 interface DailyUnitsDao {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertDailyUnits(dailyUnits: DailyUnitsEntity)
+    @Upsert
+    suspend fun saveDailyUnits(dailyUnits: DailyUnitsEntity)
 
-    @Query("SELECT * FROM ${DailyUnitsEntity.TABLE_NAME} WHERE ${DailyUnitsEntity.FORECAST_ID} = :forecastId")
-    suspend fun getDailyUnitsByForecastId(forecastId: Int): DailyUnitsEntity?
+    @Query("SELECT * FROM ${DailyUnitsEntity.TABLE_NAME} WHERE ${DailyUnitsEntity.FORECAST_LATITUDE} = :latitude AND ${DailyUnitsEntity.FORECAST_LONGITUDE} = :longitude")
+    suspend fun getDailyUnitsByForecastId(latitude: Double, longitude: Double): DailyUnitsEntity?
+
+    @Query("DELETE FROM ${DailyUnitsEntity.TABLE_NAME} WHERE ${DailyUnitsEntity.FORECAST_LATITUDE} = :latitude AND ${DailyUnitsEntity.FORECAST_LONGITUDE} = :longitude")
+    suspend fun deleteDailyUnitsByForecastId(latitude: Double, longitude: Double)
 }

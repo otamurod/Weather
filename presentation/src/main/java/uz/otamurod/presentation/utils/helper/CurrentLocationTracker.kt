@@ -12,10 +12,14 @@ import androidx.core.content.ContextCompat
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import kotlinx.coroutines.suspendCancellableCoroutine
+import uz.otamurod.domain.preferences.WeatherApplicationPreferencesApi
 import java.util.*
 import kotlin.coroutines.resume
 
-class CurrentLocationTracker(private val applicationContext: Context) {
+class CurrentLocationTracker(
+    private val applicationContext: Context,
+    private val preferences: WeatherApplicationPreferencesApi
+) {
     private val locationClient: FusedLocationProviderClient =
         LocationServices.getFusedLocationProviderClient(applicationContext)
 
@@ -76,7 +80,7 @@ class CurrentLocationTracker(private val applicationContext: Context) {
         var addressText = ""
 
         Geocoder(
-            applicationContext, Locale.getDefault()
+            applicationContext, Locale.forLanguageTag(preferences.appLanguageCode.toString())
         ).apply {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 getFromLocation(latitude, longitude, 1, object : Geocoder.GeocodeListener {

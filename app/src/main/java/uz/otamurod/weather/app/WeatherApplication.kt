@@ -23,6 +23,7 @@ class WeatherApplication : Application() {
         PermissionRequester.initialize(applicationContext)
         localizationDelegate.onCreate(this)
         toggleTheme()
+        preferences.appLanguageCode = "uz"
     }
 
     private fun toggleTheme() {
@@ -34,7 +35,7 @@ class WeatherApplication : Application() {
     }
 
     override fun attachBaseContext(base: Context) {
-        localizationDelegate.setDefaultLanguage(base, Locale.ENGLISH)
+        localizationDelegate.setDefaultLanguage(base, Locale.forLanguageTag("uz"))
         super.attachBaseContext(localizationDelegate.attachBaseContext(base))
         MultiDex.install(this)
     }

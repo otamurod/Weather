@@ -13,6 +13,8 @@ import uz.otamurod.data.repository.WeatherLocalRepository
 import uz.otamurod.domain.api.repository.GeoCodingRemoteRepositoryApi
 import uz.otamurod.domain.api.repository.OpenMeteoRemoteRepositoryApi
 import uz.otamurod.domain.api.repository.WeatherLocalRepositoryApi
+import uz.otamurod.domain.interactor.LastLocationInteractorApi
+import uz.otamurod.domain.interactor.LocationSearchInteractorApi
 import javax.inject.Singleton
 
 @Module
@@ -26,9 +28,12 @@ object RepositoryModule {
     @Provides
     @Singleton
     fun provideOpenMeteoRemoteRepositoryApi(
-        openMeteoNetworkDataSource: OpenMeteoNetworkDataSource
+        openMeteoNetworkDataSource: OpenMeteoNetworkDataSource,
+        weatherDatabaseDataSource: WeatherDatabaseDataSource,
+        lastLocationInteractorApi: LastLocationInteractorApi,
+        locationSearchInteractorApi: LocationSearchInteractorApi
     ): OpenMeteoRemoteRepositoryApi {
-        return OpenMeteoRemoteRepository(openMeteoNetworkDataSource)
+        return OpenMeteoRemoteRepository(openMeteoNetworkDataSource, weatherDatabaseDataSource, lastLocationInteractorApi, locationSearchInteractorApi)
     }
 
     @Provides
@@ -46,7 +51,7 @@ object RepositoryModule {
     @Provides
     @Singleton
     fun provideWeatherLocalRepositoryApi(
-    weatherDatabaseDataSource: WeatherDatabaseDataSource
+        weatherDatabaseDataSource: WeatherDatabaseDataSource
     ): WeatherLocalRepositoryApi {
         return WeatherLocalRepository(weatherDatabaseDataSource)
     }

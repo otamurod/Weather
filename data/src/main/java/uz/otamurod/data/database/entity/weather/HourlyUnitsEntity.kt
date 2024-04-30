@@ -2,14 +2,17 @@ package uz.otamurod.data.database.entity.weather
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
-import androidx.room.PrimaryKey
+import uz.otamurod.data.database.entity.weather.HourlyUnitsEntity.Companion.FORECAST_LATITUDE
+import uz.otamurod.data.database.entity.weather.HourlyUnitsEntity.Companion.FORECAST_LONGITUDE
 import uz.otamurod.data.database.entity.weather.HourlyUnitsEntity.Companion.TABLE_NAME
 
-@Entity(tableName = TABLE_NAME)
+@Entity(tableName = TABLE_NAME, primaryKeys = [FORECAST_LATITUDE, FORECAST_LONGITUDE])
 data class HourlyUnitsEntity(
-    @PrimaryKey(autoGenerate = false)
-    @ColumnInfo(name = FORECAST_ID)
-    var forecastId: Int,
+    @ColumnInfo(name = FORECAST_LATITUDE)
+    var latitude: Double,
+
+    @ColumnInfo(name = FORECAST_LONGITUDE)
+    var longitude: Double,
 
     @ColumnInfo(name = TIME)
     var time: String,
@@ -28,7 +31,8 @@ data class HourlyUnitsEntity(
 ) {
     companion object {
         const val TABLE_NAME = "hourly_units"
-        const val FORECAST_ID = "forecast_id"
+        const val FORECAST_LATITUDE = "forecast_latitude"
+        const val FORECAST_LONGITUDE = "forecast_longitude"
         const val TIME = "time"
         const val TEMPERATURE_2_M = "temperature_2_m"
         const val APPARENT_TEMPERATURE = "apparent_temperature"

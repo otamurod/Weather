@@ -19,7 +19,9 @@ object PlaceResponseMapper {
                 population,
                 countryId,
                 country,
-                admin1
+                admin1,
+                latitude,
+                longitude
             )
         }
     }

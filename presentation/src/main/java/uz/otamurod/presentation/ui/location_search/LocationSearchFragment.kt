@@ -24,6 +24,7 @@ import uz.otamurod.presentation.ui.location_search.adapter.LocationSearchResults
 import uz.otamurod.presentation.ui.location_search.adapter.SearchedLocationsRecyclerViewAdapter
 import uz.otamurod.presentation.utils.network.NetworkStatusListener
 import uz.otamurod.presentation.utils.weather.NavArgsKeys
+import java.util.*
 
 @AndroidEntryPoint
 class LocationSearchFragment : BaseFragment(), NetworkStatusListener {
@@ -59,7 +60,7 @@ class LocationSearchFragment : BaseFragment(), NetworkStatusListener {
         locationSearchResultsRecyclerViewAdapter.onClick = {
             updateSearchResultsRvVisibility(false)
             lifecycleScope.launch {
-                viewModel.insertSearchedPlace(place = it)
+                viewModel.saveSearchedPlace(place = it)
                 delay(3000)
                 setFragmentResultArg(it)
             }
@@ -70,7 +71,7 @@ class LocationSearchFragment : BaseFragment(), NetworkStatusListener {
         binding.searchedLocationsRecyclerView.adapter = searchedLocationsRecyclerViewAdapter
         searchedLocationsRecyclerViewAdapter.onClick = {
             lifecycleScope.launch {
-                viewModel.insertSearchedPlace(place = it)
+                viewModel.saveSearchedPlace(place = it)
                 delay(500)
                 setFragmentResultArg(it)
             }
@@ -78,7 +79,7 @@ class LocationSearchFragment : BaseFragment(), NetworkStatusListener {
 
         searchedLocationsRecyclerViewAdapter.onDeleteClick = {
             lifecycleScope.launch {
-                viewModel.deleteSearchedPlaceById(it.id)
+                viewModel.deleteSearchedPlaceById(it)
             }
         }
     }
@@ -91,7 +92,10 @@ class LocationSearchFragment : BaseFragment(), NetworkStatusListener {
                     place.id
                 )
             }
-            requireActivity().supportFragmentManager.setFragmentResult(NavArgsKeys.SEARCH_PLACE_REQUEST_KEY, bundle)
+            requireActivity().supportFragmentManager.setFragmentResult(
+                NavArgsKeys.SEARCH_PLACE_REQUEST_KEY,
+                bundle
+            )
             findNavController().navigateUp()
         }
     }
@@ -117,6 +121,14 @@ class LocationSearchFragment : BaseFragment(), NetworkStatusListener {
             }
         }
 
+        viewModel.isProcessing.observe(viewLifecycleOwner) {
+            if (it) {
+                updateProgressBarVisibility(true)
+            } else {
+                updateProgressBarVisibility(false)
+            }
+        }
+
         viewModel.locationSearchResult.observe(viewLifecycleOwner) {
             if (it.places.isNotEmpty()) {
                 locationSearchResultsRecyclerViewAdapter.differ.submitList(it.places)
@@ -128,6 +140,8 @@ class LocationSearchFragment : BaseFragment(), NetworkStatusListener {
             if (it.isNotEmpty()) {
                 searchedLocationsRecyclerViewAdapter.differ.submitList(it)
                 updateSearchedLocationsRvVisibility(true)
+            } else {
+                updateSearchedLocationsRvVisibility(false)
             }
         }
 
@@ -185,10 +199,13 @@ class LocationSearchFragment : BaseFragment(), NetworkStatusListener {
     }
 
     private fun performSearch(query: String?) {
-        // Implement search functionality here
+        /**
+         * Perform a network call to get locations
+         * To get search location data that fits app language, we pass [appLanguageCode] from Settings
+         */
         if (!query.isNullOrEmpty()) {
             lifecycleScope.launch {
-                viewModel.searchLocation(name = query)
+                viewModel.searchLocation(name = query, language = preferences.appLanguageCode!!)
             }
         }
     }

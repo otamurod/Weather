@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">@drawable/welcome_fragment_background_img</item>
         <!-- Customize your theme here. -->
         <item name="colorSurface">@color/material_light_blue_50</item>
         <item name="colorOnSurface">@color/today_text_color</item>

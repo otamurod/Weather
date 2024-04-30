@@ -18,13 +18,21 @@ data class LastLocationEntity(
     var longitude: Double,
 
     @ColumnInfo(name = ADDRESS_NAME)
-    var addressName: String
+    var addressName: String,
+
+    @ColumnInfo(name = CORRESPONDING_FORECAST_LATITUDE)
+    var correspondingForecastLat: Double,
+
+    @ColumnInfo(name = CORRESPONDING_FORECAST_LONGITUDE)
+    var correspondingForecastLong: Double,
 ) {
     companion object {
         const val TABLE_NAME = "last_location"
         const val ID = "id"
         const val LATITUDE = "latitude"
         const val LONGITUDE = "longitude"
+        const val CORRESPONDING_FORECAST_LATITUDE = "corresponding_forecast_latitude"
+        const val CORRESPONDING_FORECAST_LONGITUDE = "corresponding_forecast_longitude"
         const val ADDRESS_NAME = "address_name"
     }
 }

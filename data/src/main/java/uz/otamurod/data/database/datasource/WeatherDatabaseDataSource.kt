@@ -27,51 +27,72 @@ class WeatherDatabaseDataSource @Inject constructor(
     suspend fun getLastLocation(): LastLocationEntity? = lastLocationDao.getLastLocation()
 
     // Searched Location
-    suspend fun insertPlace(place: PlaceEntity) = placeDao.insertPlace(place)
+    suspend fun savePlace(place: PlaceEntity) = placeDao.savePlace(place)
 
     suspend fun getPlaceById(id: Int): PlaceEntity = placeDao.getPlaceById(id)
+
+    suspend fun getPlaceByLatLong(latitude: Double, longitude: Double): PlaceEntity? =
+        placeDao.getPlaceByLatLong(latitude, longitude)
 
     suspend fun getAllPlaces(): List<PlaceEntity> = placeDao.getAllPlaces()
 
     suspend fun deletePlaceById(id: Int) = placeDao.deletePlaceById(id)
 
     // Weather
-    suspend fun insertCurrent(current: CurrentEntity) = currentDao.insertCurrent(current)
 
-    suspend fun getCurrentByForecastId(forecastId: Int): CurrentEntity? =
-        currentDao.getCurrentByForecastId(forecastId)
+    suspend fun saveCurrent(current: CurrentEntity) = currentDao.saveCurrent(current)
 
-    suspend fun insertCurrentUnits(currentUnits: CurrentUnitsEntity) =
-        currentUnitsDao.insertCurrentUnits(currentUnits)
+    suspend fun getCurrentByForecastId(latitude: Double, longitude: Double): CurrentEntity? =
+        currentDao.getCurrentByForecastId(latitude, longitude)
 
-    suspend fun getCurrentUnitsByForecastId(forecastId: Int): CurrentUnitsEntity? =
-        currentUnitsDao.getCurrentUnitsByForecastId(forecastId)
+    suspend fun saveCurrentUnits(currentUnits: CurrentUnitsEntity) =
+        currentUnitsDao.saveCurrentUnits(currentUnits)
 
-    suspend fun insertDaily(daily: DailyEntity) = dailyDao.insertDaily(daily)
+    suspend fun getCurrentUnitsByForecastId(
+        latitude: Double,
+        longitude: Double
+    ): CurrentUnitsEntity? =
+        currentUnitsDao.getCurrentUnitsByForecastId(latitude, longitude)
 
-    suspend fun getDailyByForecastId(forecastId: Int): List<DailyEntity>? =
-        dailyDao.getDailyByForecastId(forecastId)
+    suspend fun saveDaily(daily: DailyEntity) = dailyDao.saveDaily(daily)
 
-    suspend fun insertDailyUnits(dailyUnits: DailyUnitsEntity) =
-        dailyUnitsDao.insertDailyUnits(dailyUnits)
+    suspend fun getDailyByForecastId(latitude: Double, longitude: Double): List<DailyEntity>? =
+        dailyDao.getDailyByForecastId(latitude, longitude)
 
-    suspend fun getDailyUnitsByForecastId(forecastId: Int): DailyUnitsEntity? =
-        dailyUnitsDao.getDailyUnitsByForecastId(forecastId)
+    suspend fun saveDailyUnits(dailyUnits: DailyUnitsEntity) =
+        dailyUnitsDao.saveDailyUnits(dailyUnits)
 
-    suspend fun insertHourly(hourly: HourlyEntity) = hourlyDao.insertHourly(hourly)
+    suspend fun getDailyUnitsByForecastId(latitude: Double, longitude: Double): DailyUnitsEntity? =
+        dailyUnitsDao.getDailyUnitsByForecastId(latitude, longitude)
 
-    suspend fun getHourlyByForecastId(forecastId: Int): List<HourlyEntity>? =
-        hourlyDao.getHourlyByForecastId(forecastId)
+    suspend fun saveHourly(hourly: HourlyEntity) = hourlyDao.saveHourly(hourly)
 
-    suspend fun insertHourlyUnits(hourlyUnits: HourlyUnitsEntity) =
-        hourlyUnitsDao.insertHourlyUnits(hourlyUnits)
+    suspend fun getHourlyByForecastId(latitude: Double, longitude: Double): List<HourlyEntity>? =
+        hourlyDao.getHourlyByForecastId(latitude, longitude)
 
-    suspend fun getHourlyUnitsByForecastId(forecastId: Int): HourlyUnitsEntity? =
-        hourlyUnitsDao.getHourlyUnitsByForecastId(forecastId)
+    suspend fun saveHourlyUnits(hourlyUnits: HourlyUnitsEntity) =
+        hourlyUnitsDao.saveHourlyUnits(hourlyUnits)
 
-    suspend fun insertForecast(forecast: ForecastEntity): Int = forecastDao.insertForecast(forecast).toInt()
+    suspend fun getHourlyUnitsByForecastId(
+        latitude: Double,
+        longitude: Double
+    ): HourlyUnitsEntity? =
+        hourlyUnitsDao.getHourlyUnitsByForecastId(latitude, longitude)
+
+    suspend fun saveForecast(forecast: ForecastEntity): Int =
+        forecastDao.saveForecast(forecast).toInt()
 
     suspend fun getForecastByLatLong(latitude: Double, longitude: Double): ForecastEntity? =
         forecastDao.getForecastByLatLong(latitude, longitude)
+
+    suspend fun deleteForecast(latitude: Double, longitude: Double) {
+        forecastDao.deleteForecast(latitude, longitude)
+        currentUnitsDao.deleteCurrentUnitsByForecastId(latitude, longitude)
+        currentDao.deleteCurrentByForecastId(latitude, longitude)
+        dailyUnitsDao.deleteDailyUnitsByForecastId(latitude, longitude)
+        dailyDao.deleteDailyByForecastId(latitude, longitude)
+        hourlyUnitsDao.deleteHourlyUnitsByForecastId(latitude, longitude)
+        hourlyDao.deleteHourlyByForecastId(latitude, longitude)
+    }
 
 }

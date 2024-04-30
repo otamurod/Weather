@@ -9,7 +9,9 @@ object LastLocationDbMapper {
             id = this.id,
             latitude = this.latitude,
             longitude = this.longitude,
-            addressName = this.addressName
+            addressName = this.addressName,
+            correspondingForecastLat = this.correspondingForecastLat,
+            correspondingForecastLong = this.correspondingForecastLong
         )
     }
 
@@ -18,7 +20,9 @@ object LastLocationDbMapper {
             id = this.id,
             latitude = this.latitude,
             longitude = this.longitude,
-            addressName = this.addressName
+            addressName = this.addressName,
+            correspondingForecastLat = this.correspondingForecastLat,
+            correspondingForecastLong = this.correspondingForecastLong
         )
     }
 }

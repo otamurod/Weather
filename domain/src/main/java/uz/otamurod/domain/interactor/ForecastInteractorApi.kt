@@ -7,10 +7,12 @@ import uz.otamurod.domain.util.DataState
 interface ForecastInteractorApi {
     suspend fun getForecast(
         latitude: Double,
-        longitude: Double
+        longitude: Double,
+        shouldUpdateLastLocation: Boolean
     ): Flow<DataState<Forecast>>
 
-    suspend fun getForecastOfPlaceByLatLong(latitude: Double, longitude: Double): Forecast?
-
-    suspend fun insertForecastOfPlace(forecast: Forecast)
+    suspend fun deleteForecast(
+        latitude: Double,
+        longitude: Double
+    )
 }

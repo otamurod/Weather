@@ -1,7 +1,6 @@
 package uz.otamurod.domain.api.repository
 
 import uz.otamurod.domain.api.model.location.Place
-import uz.otamurod.domain.api.model.weather.Forecast
 import uz.otamurod.domain.model.LastLocation
 
 interface WeatherLocalRepositoryApi {
@@ -13,12 +12,11 @@ interface WeatherLocalRepositoryApi {
     suspend fun getDeviceLocation(): LastLocation?
 
     // Searched Location
-    suspend fun getSearchedPlaceById(id: Int): Place
+    suspend fun getSearchedPlaceById(id: Int): Place?
+
+    suspend fun getSearchedPlaceByLatLong(latitude: Double, longitude: Double): Place?
 
     suspend fun getAllSearchedPlaces(): List<Place>
-
-    // Weather
-    suspend fun getForecastOfPlaceByLatLong(latitude: Double, longitude: Double): Forecast?
 
     /**
      * Insert to Database
@@ -28,10 +26,7 @@ interface WeatherLocalRepositoryApi {
     suspend fun saveDeviceLocation(lastLocation: LastLocation)
 
     // Searched Location
-    suspend fun insertSearchedPlace(place: Place)
-
-    // Weather
-    suspend fun insertForecastOfPlace(forecast: Forecast)
+    suspend fun saveSearchedPlace(place: Place)
 
     /**
      * Clean Database
@@ -39,4 +34,6 @@ interface WeatherLocalRepositoryApi {
 
     // Searched Location
     suspend fun deleteSearchedPlaceById(id: Int)
+
+    suspend fun deleteForecast(latitude: Double, longitude: Double)
 }

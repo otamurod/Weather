@@ -23,7 +23,7 @@ class WelcomeFragment : BaseFragment(), NetworkStatusListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         lifecycleScope.launch {
-            viewModel.setContext(requireActivity(), this@WelcomeFragment)
+            viewModel.setContext(requireActivity(), this@WelcomeFragment, preferences)
         }
         checkAndRequestPermission()
     }
@@ -57,6 +57,9 @@ class WelcomeFragment : BaseFragment(), NetworkStatusListener {
                     updateShowGpsEnablePromptVisibility(false)
                     updateTurnOnNetworkVisibility(false)
 
+                    /**
+                     * Delay 3 seconds so that our Welcome Screen act as a Splash Screen
+                     */
                     delay(3000)
                     findNavController().navigate(R.id.currentWeatherFragment)
                 }

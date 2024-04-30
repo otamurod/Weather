@@ -4,12 +4,13 @@ import uz.otamurod.data.database.entity.weather.DailyEntity
 import uz.otamurod.domain.api.model.weather.Daily
 
 object DailyDbMapper {
-    fun fromBusiness(daily: Daily, forecastId: Int) = with(daily) {
+    fun fromBusiness(daily: Daily, latitude: Double, longitude: Double) = with(daily) {
         val dailyEntities = mutableListOf<DailyEntity>()
 
         for (i in this.time.indices) {
             val entity = DailyEntity(
-                forecastId = forecastId,
+                latitude = latitude,
+                longitude = longitude,
                 time = this.time[i],
                 weatherCode = this.weatherCode[i],
                 temperature2mMax = this.temperature2mMax[i],

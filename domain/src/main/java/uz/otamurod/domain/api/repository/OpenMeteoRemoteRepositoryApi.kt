@@ -6,7 +6,10 @@ import uz.otamurod.domain.util.DataState
 
 interface OpenMeteoRemoteRepositoryApi {
     suspend fun getForecast(
-        latitude: Double,
-        longitude: Double
+        latitude: Double, longitude: Double, shouldUpdateLastLocation: Boolean
     ): Flow<DataState<Forecast>>
+
+    suspend fun fetchForecastOnline(
+        latitude: Double, longitude: Double, shouldUpdateLastLocation: Boolean
+    ): Flow<Forecast?>
 }

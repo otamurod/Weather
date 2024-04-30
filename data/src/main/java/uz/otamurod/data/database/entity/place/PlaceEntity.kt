@@ -45,7 +45,13 @@ data class PlaceEntity(
     var country: String,
 
     @ColumnInfo(name = ADMIN1)
-    var admin1: String
+    var admin1: String,
+
+    @ColumnInfo(name = CORRESPONDING_FORECAST_LATITUDE)
+    var correspondingForecastLat: Double,
+
+    @ColumnInfo(name = CORRESPONDING_FORECAST_LONGITUDE)
+    var correspondingForecastLong: Double,
 ) {
     companion object {
         const val TABLE_NAME = "places"
@@ -62,5 +68,7 @@ data class PlaceEntity(
         const val COUNTRY_ID = "country_id"
         const val COUNTRY = "country"
         const val ADMIN1 = "admin1"
+        const val CORRESPONDING_FORECAST_LATITUDE = "corresponding_forecast_latitude"
+        const val CORRESPONDING_FORECAST_LONGITUDE = "corresponding_forecast_longitude"
     }
 }

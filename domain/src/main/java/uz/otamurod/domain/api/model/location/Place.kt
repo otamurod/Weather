@@ -27,5 +27,9 @@ data class Place(
 
     val country: String,
 
-    val admin1: String
-): Serializable
+    val admin1: String,
+
+    var correspondingForecastLat: Double,
+
+    var correspondingForecastLong: Double,
+) : Serializable

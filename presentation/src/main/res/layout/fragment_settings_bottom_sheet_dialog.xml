@@ -24,11 +24,11 @@
             android:gravity="center"
             android:maxLines="1"
             android:padding="12dp"
+            android:text="@string/settings"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/settings" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/darkThemeSwitch"

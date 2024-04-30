@@ -2,15 +2,12 @@ package uz.otamurod.data.database.entity.weather
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
-import androidx.room.PrimaryKey
+import uz.otamurod.data.database.entity.weather.ForecastEntity.Companion.LATITUDE
+import uz.otamurod.data.database.entity.weather.ForecastEntity.Companion.LONGITUDE
 import uz.otamurod.data.database.entity.weather.ForecastEntity.Companion.TABLE_NAME
 
-@Entity(tableName = TABLE_NAME)
+@Entity(tableName = TABLE_NAME, primaryKeys = [LATITUDE, LONGITUDE])
 data class ForecastEntity(
-    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = ID)
-    var id: Int = 0,
-
     @ColumnInfo(name = LATITUDE)
     var latitude: Double,
 

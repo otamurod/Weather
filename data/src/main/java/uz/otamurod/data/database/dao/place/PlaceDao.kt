@@ -1,15 +1,12 @@
 package uz.otamurod.data.database.dao.place
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import uz.otamurod.data.database.entity.place.PlaceEntity
 
 @Dao
 interface PlaceDao {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertPlace(place: PlaceEntity)
+    @Upsert
+    suspend fun savePlace(place: PlaceEntity)
 
     @Query("SELECT * FROM ${PlaceEntity.TABLE_NAME} WHERE ${PlaceEntity.ID} = :id")
     suspend fun getPlaceById(id: Int): PlaceEntity
@@ -19,4 +16,7 @@ interface PlaceDao {
 
     @Query("DELETE FROM ${PlaceEntity.TABLE_NAME} WHERE ${PlaceEntity.ID} = :id")
     suspend fun deletePlaceById(id: Int)
+
+    @Query("SELECT * FROM ${PlaceEntity.TABLE_NAME} WHERE ${PlaceEntity.LATITUDE} = :latitude AND ${PlaceEntity.LONGITUDE} = :longitude LIMIT 1")
+    suspend fun getPlaceByLatLong(latitude: Double, longitude: Double): PlaceEntity?
 }

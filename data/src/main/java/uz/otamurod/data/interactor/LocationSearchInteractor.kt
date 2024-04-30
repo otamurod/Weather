@@ -20,16 +20,20 @@ class LocationSearchInteractor @Inject constructor(
         return geoCodingRemoteRepositoryApi.searchLocation(name, language)
     }
 
-    override suspend fun getSearchedPlaceById(id: Int): Place {
+    override suspend fun getSearchedPlaceById(id: Int): Place? {
         return weatherLocalRepositoryApi.getSearchedPlaceById(id)
+    }
+
+    override suspend fun getSearchedPlaceByLatLong(latitude: Double, longitude: Double): Place? {
+        return weatherLocalRepositoryApi.getSearchedPlaceByLatLong(latitude, longitude)
     }
 
     override suspend fun getAllSearchedPlaces(): List<Place> {
         return weatherLocalRepositoryApi.getAllSearchedPlaces()
     }
 
-    override suspend fun insertSearchedPlace(place: Place) {
-        return weatherLocalRepositoryApi.insertSearchedPlace(place)
+    override suspend fun saveSearchedPlace(place: Place) {
+        return weatherLocalRepositoryApi.saveSearchedPlace(place)
     }
 
     override suspend fun deleteSearchedPlaceById(id: Int) {

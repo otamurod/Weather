@@ -11,11 +11,13 @@ interface LocationSearchInteractorApi {
         language: String = "en"
     ): Flow<DataState<LocationSearch>>
 
-    suspend fun getSearchedPlaceById(id: Int): Place
+    suspend fun getSearchedPlaceById(id: Int): Place?
+
+    suspend fun getSearchedPlaceByLatLong(latitude: Double, longitude: Double): Place?
 
     suspend fun getAllSearchedPlaces(): List<Place>
 
-    suspend fun insertSearchedPlace(place: Place)
+    suspend fun saveSearchedPlace(place: Place)
 
     suspend fun deleteSearchedPlaceById(id: Int)
 }

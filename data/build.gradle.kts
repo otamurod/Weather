@@ -46,4 +46,7 @@ dependencies {
     // Chuck interceptor
     debugImplementation(Dependencies.Chuck.library)
     releaseImplementation(Dependencies.Chuck.libraryNoOp)
+
+    // JodaTime
+    implementation(Dependencies.JodaTime.jodaTime)
 }

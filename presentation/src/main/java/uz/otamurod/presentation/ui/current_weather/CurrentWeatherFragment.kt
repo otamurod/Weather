@@ -72,9 +72,7 @@ class CurrentWeatherFragment : BaseFragment(), NetworkStatusListener {
         )
 
         binding.swipeRefreshLayout.setOnRefreshListener {
-            lifecycleScope.launch {
-                viewModel.getDeviceLocation()
-            }
+            requestForecastDataAgain()
         }
     }
 
@@ -114,21 +112,50 @@ class CurrentWeatherFragment : BaseFragment(), NetworkStatusListener {
         viewModel.forecast.observe(viewLifecycleOwner) {
             weatherForecast = it
             updateCurrentWeatherForecast(it)
+            if (viewModel.searchedPlace.value != null && viewModel.shouldUpdateLastLocation.value != null && viewModel.shouldUpdateLastLocation.value == false) {
+                updateSearchedPlaceInfo(viewModel.searchedPlace.value!!)
+            } else {
+                updateLastLocationInfo(viewModel.lastLocation.value!!)
+            }
+            lifecycleScope.launch {
+                viewModel.updateLocationCorrespondingFields()
+            }
         }
 
         viewModel.lastLocation.observe(viewLifecycleOwner) { lastLocation ->
-            lastLocation?.let {
-                updateLastLocationInfo(it)
-                lifecycleScope.launch {
-                    viewModel.getForecast(it.latitude, it.longitude)
+            /**
+             * Request Last Accessed Location's Weather Forecast Data
+             */
+            if (viewModel.isForecastFetched.value == false) {
+                lastLocation?.let {
+                    if (viewModel.searchedPlace.value == null) {
+                        lifecycleScope.launch {
+                            viewModel.getForecast(
+                                it.correspondingForecastLat,
+                                it.correspondingForecastLong,
+                                true
+                            )
+                        }
+                    }
                 }
+                Log.d(
+                    TAG,
+                    "setUpObservers: Location: lat = ${lastLocation.correspondingForecastLat}, long = ${lastLocation.correspondingForecastLong}"
+                )
             }
         }
 
         viewModel.searchedPlace.observe(viewLifecycleOwner) {
-            updateSearchedPlaceInfo(it)
-            lifecycleScope.launch {
-                viewModel.getForecast(it.latitude, it.longitude)
+            /**
+             * Request Weather Forecast Of Searched Place
+             */
+            if (viewModel.isForecastFetched.value == false && it != null) {
+                getForecastOfSearchedPlace(it)
+
+                Log.d(
+                    TAG,
+                    "setUpObservers: Place: lat = ${it.correspondingForecastLat}, long = ${it.correspondingForecastLong}"
+                )
             }
         }
 
@@ -146,6 +173,37 @@ class CurrentWeatherFragment : BaseFragment(), NetworkStatusListener {
             lifecycleScope.launch {
                 updateNetworkConnectionAlert(isConnected)
             }
+        }
+    }
+
+    private fun requestForecastDataAgain() {
+        lifecycleScope.launch {
+            viewModel.updateForecastFetchedFlag(false)
+            if (viewModel.searchedPlace.value != null) {
+                /**
+                 * Request Weather Forecast Of Searched Place When Refresh Is Done
+                 * If user has already selected a place from [LocationSearchFragment]
+                 */
+                viewModel.searchedPlace.value?.let {
+                    getForecastOfSearchedPlace(it)
+                }
+            } else {
+                /**
+                 * Otherwise, Access To The Device Location
+                 * To Request Last Accessed Location's Weather Forecast Data
+                 */
+                viewModel.getDeviceLocation()
+            }
+        }
+    }
+
+    private fun getForecastOfSearchedPlace(place: Place) {
+        lifecycleScope.launch {
+            viewModel.getForecast(
+                place.correspondingForecastLat,
+                place.correspondingForecastLong,
+                false
+            )
         }
     }
 
@@ -174,14 +232,18 @@ class CurrentWeatherFragment : BaseFragment(), NetworkStatusListener {
     }
 
     private fun updateLastLocationInfo(location: LastLocation) {
-        binding.apply {
-            addressNameTextView.text = location.addressName
+        if (viewModel.isForecastFetched.value == true) {
+            binding.apply {
+                addressNameTextView.text = location.addressName
+            }
         }
     }
 
     private fun updateSearchedPlaceInfo(place: Place) {
-        binding.apply {
-            addressNameTextView.text = String.format("%s, %s", place.name, place.country)
+        if (viewModel.isForecastFetched.value == true) {
+            binding.apply {
+                addressNameTextView.text = String.format("%s, %s", place.name, place.country)
+            }
         }
     }
 
@@ -308,6 +370,12 @@ class CurrentWeatherFragment : BaseFragment(), NetworkStatusListener {
             if (placeId != -1) {
                 lifecycleScope.launch {
                     viewModel.getSearchedPlaceById(placeId)
+                    viewModel.updateForecastFetchedFlag(false)
+                }
+            } else {
+                lifecycleScope.launch {
+                    viewModel.updateForecastFetchedFlag(false)
+                    requestForecastDataAgain()
                 }
             }
         }
@@ -364,6 +432,11 @@ class CurrentWeatherFragment : BaseFragment(), NetworkStatusListener {
 
     override fun onNetworkLost() {
         viewModel.updateNetworkStatus(false)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        requestForecastDataAgain()
     }
 
     companion object {

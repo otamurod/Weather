@@ -4,12 +4,13 @@ import uz.otamurod.data.database.entity.weather.HourlyEntity
 import uz.otamurod.domain.api.model.weather.Hourly
 
 object HourlyDbMapper {
-    fun fromBusiness(hourly: Hourly, forecastId: Int) = with(hourly) {
+    fun fromBusiness(hourly: Hourly, latitude: Double, longitude: Double) = with(hourly) {
         val hourlyEntities = mutableListOf<HourlyEntity>()
 
         for (i in this.time.indices) {
             val entity = HourlyEntity(
-                forecastId = forecastId,
+                latitude = latitude,
+                longitude = longitude,
                 time = this.time[i],
                 temperature2m = this.temperature2m[i],
                 apparentTemperature = this.apparentTemperature[i],
