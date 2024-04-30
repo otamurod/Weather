@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="12dp" />
+    <stroke
+        android:width="4dp"
+        android:color="@color/network_prompt_bg_stroke_color"
+        android:dashWidth="24dp"
+        android:dashGap="8dp" />
+    <gradient
+        android:angle="135"
+        android:centerColor="@color/network_prompt_bg_gradient_center_color"
+        android:endColor="@color/network_prompt_bg_gradient_end_color"
+        android:startColor="@color/network_prompt_bg_gradient_start_color" />
+</shape>
