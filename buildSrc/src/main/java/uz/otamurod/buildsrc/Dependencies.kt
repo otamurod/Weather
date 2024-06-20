@@ -144,4 +144,10 @@ object Dependencies {
         const val glideCompiler = "com.github.bumptech.glide:ksp:$glideVersion" // replaced with ksp
         const val glide = "com.github.bumptech.glide:glide:$glideVersion"
     }
+
+    object AppUpdate {
+        private const val appUpdateVersion = "2.1.0"
+        const val appUpdate = "com.google.android.play:app-update:$appUpdateVersion"
+        const val appUpdateKtx = "com.google.android.play:app-update-ktx:$appUpdateVersion"
+    }
 }

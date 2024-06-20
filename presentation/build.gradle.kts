@@ -87,4 +87,9 @@ dependencies {
     // Glide Dependencies
     ksp(Dependencies.Glide.glideCompiler)
     implementation(Dependencies.Glide.glide)
+
+    // Google Play In-App Update
+    implementation(Dependencies.AppUpdate.appUpdate)
+    implementation(Dependencies.AppUpdate.appUpdateKtx)
+
 }
